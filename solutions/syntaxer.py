@@ -118,7 +118,7 @@ for node, t in tree_sitter.QueryCursor(assert_q).captures(body).items():
     #sys.exit(0)
 else:       #executes only if the loop completes without hitting break
     log.debug("Did not find any assertions")
-    print("assertion error;20%")
+    print("assertion error;10%")
     #sys.exit(0)
 
 ###########################################################################

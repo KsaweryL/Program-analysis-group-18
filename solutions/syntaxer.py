@@ -53,7 +53,7 @@ else:
 
     sys.exit(-1)
 
-log.debug("Found class %s", node.range)
+# log.debug("Found class %s", node.range)
 
 #node is now a CLASS node
 
@@ -80,8 +80,8 @@ for node in tree_sitter.QueryCursor(method_q).captures(node)["method"]:
     if len(params) != len(methodid.extension.params):
         continue
 
-    log.debug(methodid.extension.params)
-    log.debug(params)
+    # log.debug(methodid.extension.params)
+    # log.debug(params)
 
     for tn, t in zip(methodid.extension.params, params):
         if (tp := t.child_by_field_name("type")) is None:
@@ -97,7 +97,7 @@ else:
     log.warning(f"could not find a method of name {method_name} in {simple_classname}")
     sys.exit(-1)
 
-log.debug("Found method %s %s", method_name, node.range)
+# log.debug("Found method %s %s", method_name, node.range)
 
 #node is now a METHOD node
 #body is definded from a METHOD node !!!!!!!!!!!!

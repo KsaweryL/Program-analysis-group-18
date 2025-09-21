@@ -102,6 +102,48 @@ def step(state: State) -> State | str:
     opr = bc[frame.pc]
     logger.debug(f"STEP {opr}\n{state}")
     match opr:
+        # activity 5
+        case jvm.Dup():
+            v = frame.stack.peek()
+            frame.stack.push(v)
+            frame.pc += 1
+            return state
+        # -------- 
+        # more things for this activity
+        case jvm.Get(static=static, field=field):
+            if static:
+                #updating getstatic case to default static fields when missing
+                if field not in state.heap:
+                    #TODO - there is a propblem with type!!!
+                    match field.extension.type:
+                        case jvm.Boolean():
+                            state.heap[field] = jvm.Value.int(0)
+                        case jvm.Int():
+                            state.heap[field] = jvm.Value.int(0)
+                        case jvm.Reference():
+                            state.heap[field] = jvm.Value.null()
+                        case _:
+                            raise NotImplementedError(
+                                f"Don't know default for static field {field}"
+                            )
+                v = state.heap.get(field, None)
+                if v is None:
+                    raise NotImplementedError(f"Uninitialized static field {field}")
+                frame.stack.push(v)
+            else:
+                objref = frame.stack.pop()
+                if objref.vale is None:
+                    return "NullPointerException"
+                obj = state.heap.get(objref.value)
+                if obj is None:
+                    raise RuntimeError(f"Invalid object reference {objref}")
+                v = obj.get(field.extension)
+                if v is None:
+                    raise RuntimeError(f"Field {field} not found in object {objref}")
+                frame.stack.push(v)
+            
+            frame.pc += 1
+            return state
         case jvm.Push(value=v):
             frame.stack.push(v)
             frame.pc += 1

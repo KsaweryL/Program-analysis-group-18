@@ -110,6 +110,11 @@ for t in body.text.splitlines():
 #assert query
 assert_q = JAVA_LANGUAGE.query(f"""(assert_statement) @assert""")
 
+div_by_0_q = JAVA_LANGUAGE.query(f""" (binary_expression
+  operator: "/"
+) @expr""")
+
+
 for node, t in tree_sitter.QueryCursor(assert_q).captures(body).items():
     if node == "assert":
         log.debug("Found assertion")

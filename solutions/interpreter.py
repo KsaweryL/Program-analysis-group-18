@@ -108,28 +108,58 @@ def step(state: State) -> State | str:
             frame.stack.push(v)
             frame.pc += 1
             return state
-        # -------- 
+        # --------
+        #check if ok...
+        #lecturer said that for now I don't need to check every condition
+        # I can't compare it againts python types - but ratehr against types defined
+        # in the virtual machines - we use different ones
+        case jvm.Ifz(condition=cond, target=target):
+            v = frame.stack.pop()
+            jump = False
+
+            logger.debug(f"To compare {repr(v)}")
+            if cond in ("eq", "ne", "lt", "le", "gt", "ge"):
+                # Integer comparisons
+                assert v.type == jvm.Int(), f"Expected int for Ifz but got {v}"
+                if cond == "eq":
+                    #if v == 0, jump = True
+                    jump = v == 0
+                elif cond == "ne":
+                    jump = v != 0
+                elif cond == "lt":
+                    jump = v < 0
+                elif cond == "le":
+                    jump = v <= 0
+                elif cond == "gt":
+                    jump = v > 0
+                elif cond == "ge":
+                    jump = v >= 0
+            elif cond in ("is", "isnot"):
+                # Reference comparisons
+                jump = (v is None) if cond == "is" else (v is not None)
+            else:
+                raise RuntimeError(f"Unknown Ifz condition: {cond}")
+            
+            if jump:
+                frame.pc.offset = target
+            else:
+                frame.pc += 1
+            
+            
+            return state 
         # more things for this activity
         case jvm.Get(static=static, field=field):
             if static:
                 #updating getstatic case to default static fields when missing
                 if field not in state.heap:
                     #TODO - there is a propblem with type!!!
-                    match field.extension.type:
-                        case jvm.Boolean():
-                            state.heap[field] = jvm.Value.int(0)
-                        case jvm.Int():
-                            state.heap[field] = jvm.Value.int(0)
-                        case jvm.Reference():
-                            state.heap[field] = jvm.Value.null()
-                        case _:
-                            raise NotImplementedError(
-                                f"Don't know default for static field {field}"
-                            )
+                    state.heap[field] = False
+                #logger.debug(f"field: {field}")
                 v = state.heap.get(field, None)
                 if v is None:
                     raise NotImplementedError(f"Uninitialized static field {field}")
-                frame.stack.push(v)
+                #.
+                frame.stack.push(jvm.Value.int(0))
             else:
                 objref = frame.stack.pop()
                 if objref.vale is None:
@@ -189,3 +219,7 @@ for x in range(1000):
         break
 else:
     print("*")
+
+
+#additional comments
+# - we can use logger.debug() for debugging

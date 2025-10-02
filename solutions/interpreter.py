@@ -108,6 +108,17 @@ def step(state: State) -> State | str:
             frame.stack.push(v)
             frame.pc += 1
             return state
+        case jvm.InvokeSpecial(method=method, is_interface=is_interface):
+
+            pass
+        case jvm.New(classname=classname):
+            #as a reference, we will use current number of objects on the heap
+            objref = len(state.heap)
+
+            state.heap[objref] = jvm.Value(jvm.Reference(), {"classname": classname, "fields": {}}) 
+            frame.stack.push(objref)
+            frame.pc +=1
+            return state
         # --------
         #lecturer said that for now I don't need to check every condition
         # I can't compare it againts python types - but ratehr against types defined

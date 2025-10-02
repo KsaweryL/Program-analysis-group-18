@@ -108,8 +108,14 @@ def step(state: State) -> State | str:
             frame.stack.push(v)
             frame.pc += 1
             return state
+        #case jvm.Return(type=type):
+        #    
+        #    if type != None:
+        #        v = frame.stack.pop()
+        #        return v
+        #    else:
+        #        return None
         # --------
-        #check if ok...
         #lecturer said that for now I don't need to check every condition
         # I can't compare it againts python types - but ratehr against types defined
         # in the virtual machines - we use different ones
@@ -123,17 +129,17 @@ def step(state: State) -> State | str:
                 assert v.type == jvm.Int(), f"Expected int for Ifz but got {v}"
                 if cond == "eq":
                     #if v == 0, jump = True
-                    jump = v == 0
+                    jump = v == jvm.Value.int(0)
                 elif cond == "ne":
-                    jump = v != 0
+                    jump = v != jvm.Value.int(0)
                 elif cond == "lt":
-                    jump = v < 0
+                    jump = v < jvm.Value.int(0)
                 elif cond == "le":
-                    jump = v <= 0
+                    jump = v <= jvm.Value.int(0)
                 elif cond == "gt":
-                    jump = v > 0
+                    jump = v > jvm.Value.int(0)
                 elif cond == "ge":
-                    jump = v >= 0
+                    jump = v >= jvm.Value.int(0)
             elif cond in ("is", "isnot"):
                 # Reference comparisons
                 jump = (v is None) if cond == "is" else (v is not None)
@@ -144,7 +150,6 @@ def step(state: State) -> State | str:
                 frame.pc.offset = target
             else:
                 frame.pc += 1
-            
             
             return state 
         # more things for this activity
@@ -192,17 +197,33 @@ def step(state: State) -> State | str:
             frame.stack.push(jvm.Value.int(v1.value // v2.value))
             frame.pc += 1
             return state
-        case jvm.Return(type=jvm.Int()):
-            v1 = frame.stack.pop()
-            state.frames.pop()
-            if state.frames:
-                frame = state.frames.peek()
-                frame.stack.push(v1)
-                frame.pc += 1
-                return state
+#        case jvm.Return(type=jvm.Int()):
+#            v1 = frame.stack.pop()
+#            state.frames.pop()
+#            if state.frames:
+#                frame = state.frames.peek()
+#                frame.stack.push(v1)
+#                frame.pc += 1
+#                return state
+#            else:
+#                return "ok"
+        case jvm.Return(type=type):
+
+            #logger.debug(f"Return type: {type}")
+            if type != None: 
+                v1 = frame.stack.pop()
+                state.frames.pop()
+                if state.frames:
+                    frame = state.frames.peek()
+                    frame.stack.push(v1)
+                    frame.pc += 1
+                    return state
+                else:
+                    return "ok"
             else:
                 return "ok"
         case a:
+            a.help()
             raise NotImplementedError(f"Don't know how to handle: {a!r}")
 
 

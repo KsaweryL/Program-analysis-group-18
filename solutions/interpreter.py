@@ -5,6 +5,9 @@ from dataclasses import dataclass
 import sys
 from loguru import logger
 
+#my own
+import os
+
 logger.remove()
 logger.add(sys.stderr, format="[{level}] {message}")
 
@@ -109,8 +112,42 @@ def step(state: State) -> State | str:
             frame.pc += 1
             return state
         case jvm.InvokeSpecial(method=method, is_interface=is_interface):
+            #TODO - no decompiled version of AssertionError!!!
+            
+            #checking if the decompiled description of the method exists in json file
+            decompiled_path = suite.decompiledfile(method.classname)
+            if not os.path.exists(decompiled_path):
+                logger.warning(f"Missing decompiled file for {method.classname}, skipping InvokeSpecial")
+                frame.pc += 1
+                return state
+            # Getting method info from Suite
+            method_info = suite.findmethod(method)
+            param_types = method_info["params"]
+            num_args = len(param_types)
+            args = [frame.stack.pop() for _ in range(num_args)][::-1]  # reverse to preserve order
 
-            pass
+            # Check if method is static
+            is_static = method_info.get("static", False)
+            locals = {}
+
+            if not is_static:
+                # Pop 'this' reference for non-static methods
+                this_ref = frame.stack.pop()
+                locals[0] = this_ref
+                for i, arg in enumerate(args, 1):
+                    locals[i] = arg
+            else:
+                for i, arg in enumerate(args):
+                    locals[i] = arg
+
+            # Create and push new frame
+            new_frame = Frame(locals, Stack.empty(), PC(method, 0))
+            state.frames.push(new_frame)
+
+            # Advance caller's pc
+            frame.pc += 1
+            return state
+            
         case jvm.New(classname=classname):
             #as a reference, we will use current number of objects on the heap
             objref = len(state.heap)

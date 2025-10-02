@@ -108,13 +108,6 @@ def step(state: State) -> State | str:
             frame.stack.push(v)
             frame.pc += 1
             return state
-        #case jvm.Return(type=type):
-        #    
-        #    if type != None:
-        #        v = frame.stack.pop()
-        #        return v
-        #    else:
-        #        return None
         # --------
         #lecturer said that for now I don't need to check every condition
         # I can't compare it againts python types - but ratehr against types defined
@@ -125,21 +118,32 @@ def step(state: State) -> State | str:
 
             logger.debug(f"To compare {repr(v)}")
             if cond in ("eq", "ne", "lt", "le", "gt", "ge"):
-                # Integer comparisons
-                assert v.type == jvm.Int(), f"Expected int for Ifz but got {v}"
+                # Integer or boolean comparisons
+                assert (v.type == jvm.Int()) or ( v.type == jvm.Boolean()), f"Expected int or bool for Ifz but got {v}"
+
+                v2 = jvm.Value.int(0)
+                #convert bool to int if neccessary
+                if v.type == jvm.Boolean():
+                    if v == True:
+                        v2 = jvm.Value.int(1)
+                    else:
+                        v2 = jvm.Value.int(0) 
+                else:
+                    v2 = v
+
                 if cond == "eq":
                     #if v == 0, jump = True
-                    jump = v == jvm.Value.int(0)
+                    jump = v2 == jvm.Value.int(0)
                 elif cond == "ne":
-                    jump = v != jvm.Value.int(0)
+                    jump = v2 != jvm.Value.int(0)
                 elif cond == "lt":
-                    jump = v < jvm.Value.int(0)
+                    jump = v2 < jvm.Value.int(0)
                 elif cond == "le":
-                    jump = v <= jvm.Value.int(0)
+                    jump = v2 <= jvm.Value.int(0)
                 elif cond == "gt":
-                    jump = v > jvm.Value.int(0)
+                    jump = v2 > jvm.Value.int(0)
                 elif cond == "ge":
-                    jump = v >= jvm.Value.int(0)
+                    jump = v2 >= jvm.Value.int(0)
             elif cond in ("is", "isnot"):
                 # Reference comparisons
                 jump = (v is None) if cond == "is" else (v is not None)
@@ -155,16 +159,24 @@ def step(state: State) -> State | str:
         # more things for this activity
         case jvm.Get(static=static, field=field):
             if static:
+                t = field.fieldid.type
+                logger.debug(f"Type: {field.fieldid.type}")
                 #updating getstatic case to default static fields when missing
                 if field not in state.heap:
-                    #TODO - there is a propblem with type!!!
-                    state.heap[field] = False
-                #logger.debug(f"field: {field}")
+                    if isinstance(t, jvm.Boolean):
+                        state.heap[field] = jvm.Value.boolean(False)
+                    elif isinstance(t, jvm.Int):
+                        state.heap[field] = jvm.Value.int(0)
+                    elif isinstance(t, jvm.Float):
+                        state.heap[field] = jvm.Value.float(0.0)
+                    else:
+                        state.heap[field] = jvm.Value.int(0)
                 v = state.heap.get(field, None)
                 if v is None:
                     raise NotImplementedError(f"Uninitialized static field {field}")
-                #.
-                frame.stack.push(jvm.Value.int(0))
+                #old - frame.stack.push(jvm.Value.int(0))
+                #new
+                frame.stack.push(v)
             else:
                 objref = frame.stack.pop()
                 if objref.vale is None:

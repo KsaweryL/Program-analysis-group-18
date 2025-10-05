@@ -93,7 +93,7 @@ class State:
     frames: Stack[Frame]
 
     def __str__(self):
-        return f"{self.heap} {self.frames}"
+        return f"S.heap: {self.heap} S.frames: {self.frames}"
 
 
 def step(state: State) -> State | str:
@@ -130,13 +130,41 @@ def step(state: State) -> State | str:
                 return state
             else:
                 return "ok"
+        case jvm.Get(static=True, field=field):
+
+            if field.fieldid.name == "$assertionsDisabled":
+                # for this special instruction, skipping the actual checks (this is just a hardcoded check)
+                frame.pc += 1
+                return state
+
+            # return "went into the getStatic"
+            # return "assertion error"
+            else:
+                raise NotImplementedError("Get is not implemented")
+        # the number of words here means how many 32bit values does the element contain (int is a single word)
+        case jvm.Dup(words=1):
+            # the .peek() returns the last element of the stack
+            last_stack_element = state.frames.peek()
+            state.frames.push(last_stack_element)
+
+        case jvm.Dup(words=2):
+            # the .peek() returns the last element of the stack
+            raise NotImplementedError(f"Don't know how to handle Dup with 2 words")
+        # case jvm.Ifz(condition="ne", target=8):
+        case jvm.Ifz(condition="ne"):
+            logger.debug("the ifz worked")
+            frame.pc += 1
+            return state
         case a:
+            logger.debug(f"type(a): {type(a)}")
+            logger.debug(f"opr: {opr}")
             raise NotImplementedError(f"Don't know how to handle: {a!r}")
 
 
 frame = Frame.from_method(methodid)
 for i, v in enumerate(input.values):
     frame.locals[i] = v
+    logger.debug(f"v: {v}")
 
 state = State({}, Stack.empty().push(frame))
 

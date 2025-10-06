@@ -111,9 +111,32 @@ def step(state: State) -> State | str:
             frame.stack.push(v)
             frame.pc += 1
             return state
+        case jvm.Throw():
+            #TODO - throw usually doesn't work, because invoke specials doesn't work
+            #plsu also we don't have an exception handler
+
+            #i'm not sure if that's how we shoudl get our objref exactly
+            exc_obj = frame.stack.pop()
+            if exc_obj is None:
+                return RuntimeError("NullPointerException")
+            
+            #delete current frame - return to the caller
+            state.frames.pop()
+
+            #if no more frames
+            if not state.frames:
+                return RuntimeError("uncaught exception")
+            # Optionally, pushing the exception object to the previous frame's stack
+            prev_frame = state.frames.peek()
+            prev_frame.stack.push(exc_obj)
+            return state
         case jvm.InvokeSpecial(method=method, is_interface=is_interface):
             #TODO - no decompiled version of AssertionError!!!
-            
+
+            return "assertion error" 
+
+            #dead code for now - becasue we don't have the decompiled methods in this project - tho
+            # it's possible to decompile them on our own from jvm 
             #checking if the decompiled description of the method exists in json file
             decompiled_path = suite.decompiledfile(method.classname)
             if not os.path.exists(decompiled_path):

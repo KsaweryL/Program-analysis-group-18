@@ -112,6 +112,8 @@ def step(state: State) -> State | str:
             frame.pc += 1
             return state
         case jvm.Throw():
+            #since InvokeSpecial return a string - throw is almost never executed
+
             #TODO - throw usually doesn't work, because invoke specials doesn't work
             #plsu also we don't have an exception handler
 
@@ -131,11 +133,12 @@ def step(state: State) -> State | str:
             prev_frame.stack.push(exc_obj)
             return state
         case jvm.InvokeSpecial(method=method, is_interface=is_interface):
-            #TODO - no decompiled version of AssertionError!!!
+            
 
             return "assertion error" 
 
-            #dead code for now - becasue we don't have the decompiled methods in this project - tho
+            #unreachable code for now - becasue we don't have the decompiled methods in this project - tho
+            #TODO - no decompiled version of AssertionError!!!
             # it's possible to decompile them on our own from jvm 
             #checking if the decompiled description of the method exists in json file
             decompiled_path = suite.decompiledfile(method.classname)
@@ -178,6 +181,93 @@ def step(state: State) -> State | str:
             state.heap[objref] = jvm.Value(jvm.Reference(), {"classname": classname, "fields": {}}) 
             frame.stack.push(objref)
             frame.pc +=1
+            return state
+        case jvm.If(condition=cond, target=target):
+            v2 = frame.stack.pop()
+            v1 = frame.stack.pop()
+            jump = False
+
+            logger.debug(f"To compare {repr(v1)} and {repr(v2)}")
+            if cond in ("eq", "ne", "lt", "le", "gt", "ge"):
+                # Integer or boolean comparisons
+                assert (v1.type == jvm.Int()) or ( v1.type == jvm.Boolean()), f"Expected int or bool for Ifz but got {v1}"
+                assert (v2.type == jvm.Int()) or ( v2.type == jvm.Boolean()), f"Expected int or bool for Ifz but got {v2}"
+
+                v1_int = jvm.Value.int(0)
+                #convert bool to int if neccessary
+                if v1.type == jvm.Boolean():
+                    if v1 == True:
+                        v1_int = jvm.Value.int(1)
+                    else:
+                        v1_int = jvm.Value.int(0) 
+                else:
+                    v1_int = v1
+
+                v2_int = jvm.Value.int(0)
+                #convert bool to int if neccessary
+                if v2.type == jvm.Boolean():
+                    if v2 == True:
+                        v2_int = jvm.Value.int(1)
+                    else:
+                        v2_int = jvm.Value.int(0) 
+                else:
+                    v2_int = v2
+
+                if cond == "eq":
+                    #if v == 0, jump = True
+                    jump = v1_int == v2_int
+                elif cond == "ne":
+                    jump = v1_int != v2_int
+                elif cond == "lt":
+                    jump = v1_int < v2_int
+                elif cond == "le":
+                    jump = v1_int <= v2_int
+                elif cond == "gt":
+                    jump = v1_int > v2_int
+                elif cond == "ge":
+                    jump = v1_int >= v2_int
+            elif cond in ("is", "isnot"):
+                # Reference comparisons
+                jump = (v1 is v2) if cond == "is" else (v1 is not v2)
+            else:
+                raise RuntimeError(f"Unknown If condition: {cond}")
+            
+            if jump:
+                frame.pc.offset = target
+            else:
+                frame.pc += 1
+            
+
+            return state
+        case jvm.Binary(type=type,operant=opr):
+            v2 = frame.stack.pop()
+            v1 = frame.stack.pop()
+
+            assert (v1.type == jvm.Int()) , f"Expected int for binary but got {v1}"
+            assert (v2.type == jvm.Int()), f"Expected int for binary but got {v2}"
+
+            result = jvm.Value.int(0)
+            match(opr):
+                case(jvm.BinaryOpr.Add):
+                    result = jvm.Value.int(v1.value + v2.value)
+                case(jvm.BinaryOpr.Rem):
+                    if (v2 == jvm.Value.int(0)):
+                        return "divide by zero"
+                    result = jvm.Value.int(v1.value % v2.value)
+                case(jvm.BinaryOpr.Div):
+                    if (v2 == jvm.Value.int(0)):
+                        return "divide by zero"
+                    result = jvm.Value.int(v1.value // v2.value)
+                case(jvm.BinaryOpr.Mul):
+                    result = jvm.Value.int(v1.value * v2.value)
+                case(jvm.BinaryOpr.Sub):
+                    result = jvm.Value.int(v1.value - v2.value)
+                case _:
+                    raise NotImplementedError(f"Unhandled operation {opr}")
+
+            frame.stack.push(result)
+
+            frame.pc += 1
             return state
         # --------
         #lecturer said that for now I don't need to check every condition

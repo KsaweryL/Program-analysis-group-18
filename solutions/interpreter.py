@@ -97,8 +97,9 @@ class State:
 
 
 def step(state: State) -> State | str:
-    assert isinstance(state, State), f"expected frame but got {state}"
+    assert isinstance(state, State), f"expected frame (or state?) but got {state}"
     frame = state.frames.peek()
+    # bc stands for bytecode
     opr = bc[frame.pc]
     logger.debug(f"STEP {opr}\n{state}")
     match opr:
@@ -129,12 +130,43 @@ def step(state: State) -> State | str:
                 frame.pc += 1
                 return state
             else:
-                return "ok"
-        case jvm.Get(static=True, field=field):
+                return "ok -- Function returned successfully with an empty frame"
+        case jvm.Return(type=None):
+            v1 = frame.stack.pop()
+            return "ok -- Function returned successfully with an empty frame"
+        case jvm.New(classname=opr):
+            """- Creates a new instance of the specified class
+            - Pushes a reference to the new instance onto the operand stack
+            - The instance is uninitialized
+            - Must be followed by an invokespecial to call <init> before use
+            - May trigger class initialization if the class is not yet initialized
+            """
+            frame.pc += 1
+            # raise NotImplementedError("New is not implemented")
+            return state
 
+        case jvm.Get(static=True, field=field):
+            """
+            According to the JVM spec:
+
+            - For static fields (getstatic):
+            * Pushes the value of the specified static field onto the stack
+            * May trigger class initialization if not yet initialized
+
+             + * opr : "get"
+                * static : <bool>
+                * field : object
+                    * class : <ClassName>
+                    * name : <string>
+                    * type : <SimpleType>
+                -- get value from $field (might be $static)
+                -- {getfield} ["objectref"] -> ["value"]
+                -- if static {getstatic} [] -> ["value"]
+            """
             if field.fieldid.name == "$assertionsDisabled":
                 # for this special instruction, skipping the actual checks (this is just a hardcoded check)
                 frame.pc += 1
+                frame.stack.push(field)
                 return state
 
             # return "went into the getStatic"
@@ -146,13 +178,46 @@ def step(state: State) -> State | str:
             # the .peek() returns the last element of the stack
             last_stack_element = state.frames.peek()
             state.frames.push(last_stack_element)
+            frame.pc += 1
+            return state
 
         case jvm.Dup(words=2):
             # the .peek() returns the last element of the stack
             raise NotImplementedError(f"Don't know how to handle Dup with 2 words")
-        # case jvm.Ifz(condition="ne", target=8):
-        case jvm.Ifz(condition="ne"):
-            logger.debug("the ifz worked")
+        case jvm.Ifz(condition=condition_value, target=target_pc_value):
+            # DUMMY: not implemented
+            # print(f"condition_value: {condition_value}")
+            # print(f"target_pc_value: {target_pc_value}")
+            most_recent_frame: Frame = state.frames.peek()
+            # print(f"before popping: most_recent_frame: {most_recent_frame}")
+            most_recent_stack_element: jvm.Value = most_recent_frame.stack.pop()
+            # print(f"most_recent_frame: {most_recent_frame}")
+            # print(f"most_recent_stack_element: {most_recent_stack_element}")
+            if condition_value == "ne":
+                # the ifz looks at the current value in the operand stack. if condition is "ne", then the jump is made if opr[0] !=0
+                if most_recent_stack_element != 0:
+                    # keeping the method value the same since we are staying within a single functions active frame
+                    frame.pc.method = frame.pc.method
+                    # since the condition was true, the program counter moves to the new location
+                    frame.pc.offset = target_pc_value
+                else:
+                    # if the condition was not filled, the execution just moves to the next instruction
+                    frame.pc.offset += 1
+            elif condition_value == "eq":
+                if most_recent_stack_element == 0:
+                    frame.pc.offset = target_pc_value
+                else:
+                    frame.pc.offset += 1
+            else:
+                raise NotImplementedError("this if operation is not implemented")
+            return state
+
+        case jvm.InvokeSpecial():
+            # DUMMY: not implemented
+            frame.pc += 1
+            return state
+        case jvm.Throw():
+            # DUMMY: not implemented
             frame.pc += 1
             return state
         case a:
@@ -161,9 +226,15 @@ def step(state: State) -> State | str:
             raise NotImplementedError(f"Don't know how to handle: {a!r}")
 
 
+"""
+this is the part of the file that runs when 
+.venv/bin/python3 solutions/interpreter.py 'jpamb.cases.Simple.assertBoolean:(Z)V' '(false)' 
+is ran
+"""
 frame = Frame.from_method(methodid)
 for i, v in enumerate(input.values):
     frame.locals[i] = v
+
     logger.debug(f"v: {v}")
 
 state = State({}, Stack.empty().push(frame))
@@ -174,4 +245,4 @@ for x in range(1000):
         print(state)
         break
 else:
-    print("*")
+    print("The interpreter ran more than 1000 steps. You probably have infinite loop")

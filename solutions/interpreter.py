@@ -134,8 +134,27 @@ def step(state: State) -> State | str:
             return state
         case jvm.InvokeSpecial(method=method, is_interface=is_interface):
             
+            return "assertion error"
 
-            return "assertion error" 
+            #while there may not be a decompiled version of the method - we can just check the stakc
+            #For now, we will assume that we will load all parameters unti the variable of type jvm.Reference() is found
+
+            params = {}
+            checked_param = frame.stack.pop()
+            dict_iterator = 0
+            while checked_param.type != jvm.Reference():
+                params[dict_iterator] = checked_param
+                checked_param = frame.stack.pop()
+
+            # Create and push new frame
+            #but we effectively don't have the method_id for assetion error, so we shouldn't really enter it
+            new_frame = Frame(params, Stack.empty(), PC(method, 0))
+            state.frames.push(new_frame)
+
+            # Advance caller's pc
+            frame.pc += 1
+
+            return state
 
             #unreachable code for now - becasue we don't have the decompiled methods in this project - tho
             #TODO - no decompiled version of AssertionError!!!
@@ -175,10 +194,9 @@ def step(state: State) -> State | str:
             return state
             
         case jvm.New(classname=classname):
-            #as a reference, we will use current number of objects on the heap
-            objref = len(state.heap)
+            objref = jvm.Value(jvm.Reference(), classname)
 
-            state.heap[objref] = jvm.Value(jvm.Reference(), {"classname": classname, "fields": {}}) 
+            state.heap[objref] = jvm.Value(jvm.Object, {"classname": classname, "fields": {}}) 
             frame.stack.push(objref)
             frame.pc +=1
             return state
@@ -190,42 +208,22 @@ def step(state: State) -> State | str:
             logger.debug(f"To compare {repr(v1)} and {repr(v2)}")
             if cond in ("eq", "ne", "lt", "le", "gt", "ge"):
                 # Integer or boolean comparisons
-                assert (v1.type == jvm.Int()) or ( v1.type == jvm.Boolean()), f"Expected int or bool for Ifz but got {v1}"
-                assert (v2.type == jvm.Int()) or ( v2.type == jvm.Boolean()), f"Expected int or bool for Ifz but got {v2}"
-
-                v1_int = jvm.Value.int(0)
-                #convert bool to int if neccessary
-                if v1.type == jvm.Boolean():
-                    if v1 == True:
-                        v1_int = jvm.Value.int(1)
-                    else:
-                        v1_int = jvm.Value.int(0) 
-                else:
-                    v1_int = v1
-
-                v2_int = jvm.Value.int(0)
-                #convert bool to int if neccessary
-                if v2.type == jvm.Boolean():
-                    if v2 == True:
-                        v2_int = jvm.Value.int(1)
-                    else:
-                        v2_int = jvm.Value.int(0) 
-                else:
-                    v2_int = v2
+                assert (v1.type == jvm.Int()), f"Expected int for Ifz but got {v1}"
+                assert (v2.type == jvm.Int()), f"Expected int for Ifz but got {v2}"
 
                 if cond == "eq":
                     #if v == 0, jump = True
-                    jump = v1_int == v2_int
+                    jump = v1 == v2
                 elif cond == "ne":
-                    jump = v1_int != v2_int
+                    jump = v1 != v2
                 elif cond == "lt":
-                    jump = v1_int < v2_int
+                    jump = v1 < v2
                 elif cond == "le":
-                    jump = v1_int <= v2_int
+                    jump = v1 <= v2
                 elif cond == "gt":
-                    jump = v1_int > v2_int
+                    jump = v1 > v2
                 elif cond == "ge":
-                    jump = v1_int >= v2_int
+                    jump = v1 >= v2
             elif cond in ("is", "isnot"):
                 # Reference comparisons
                 jump = (v1 is v2) if cond == "is" else (v1 is not v2)
@@ -280,31 +278,21 @@ def step(state: State) -> State | str:
             logger.debug(f"To compare {repr(v)}")
             if cond in ("eq", "ne", "lt", "le", "gt", "ge"):
                 # Integer or boolean comparisons
-                assert (v.type == jvm.Int()) or ( v.type == jvm.Boolean()), f"Expected int or bool for Ifz but got {v}"
-
-                v2 = jvm.Value.int(0)
-                #convert bool to int if neccessary
-                if v.type == jvm.Boolean():
-                    if v == True:
-                        v2 = jvm.Value.int(1)
-                    else:
-                        v2 = jvm.Value.int(0) 
-                else:
-                    v2 = v
+                assert (v.type == jvm.Int()), f"Expected int for Ifz but got {v}"
 
                 if cond == "eq":
                     #if v == 0, jump = True
-                    jump = v2 == jvm.Value.int(0)
+                    jump = v == jvm.Value.int(0)
                 elif cond == "ne":
-                    jump = v2 != jvm.Value.int(0)
+                    jump = v != jvm.Value.int(0)
                 elif cond == "lt":
-                    jump = v2 < jvm.Value.int(0)
+                    jump = v < jvm.Value.int(0)
                 elif cond == "le":
-                    jump = v2 <= jvm.Value.int(0)
+                    jump = v <= jvm.Value.int(0)
                 elif cond == "gt":
-                    jump = v2 > jvm.Value.int(0)
+                    jump = v > jvm.Value.int(0)
                 elif cond == "ge":
-                    jump = v2 >= jvm.Value.int(0)
+                    jump = v >= jvm.Value.int(0)
             elif cond in ("is", "isnot"):
                 # Reference comparisons
                 jump = (v is None) if cond == "is" else (v is not None)
@@ -324,9 +312,9 @@ def step(state: State) -> State | str:
                 logger.debug(f"Type: {field.fieldid.type}")
                 #updating getstatic case to default static fields when missing
                 if field not in state.heap:
-                    if isinstance(t, jvm.Boolean):
-                        state.heap[field] = jvm.Value.boolean(False)
-                    elif isinstance(t, jvm.Int):
+                    #if isinstance(t, jvm.Boolean):
+                    #    state.heap[field] = jvm.Value.boolean(False)
+                    if isinstance(t, jvm.Int) or isinstance(t, jvm.Boolean):
                         state.heap[field] = jvm.Value.int(0)
                     elif isinstance(t, jvm.Float):
                         state.heap[field] = jvm.Value.float(0.0)
@@ -357,7 +345,19 @@ def step(state: State) -> State | str:
             frame.pc += 1
             return state
         case jvm.Load(type=jvm.Int(), index=i):
-            frame.stack.push(frame.locals[i])
+            #input to this instruction is an index (ex STEP load:I 0 - 0 is an index)
+
+            #convert binary to integers
+            v = jvm.Value.int(0)
+            #convert bool to int if neccessary
+            if frame.locals[i].type == jvm.Boolean():
+                if frame.locals[i]== jvm.Value.boolean(True):
+                    v = jvm.Value.int(1)
+                else:
+                    v = jvm.Value.int(0) 
+            else:
+                v = frame.locals[i]
+            frame.stack.push(v)
             frame.pc += 1
             return state
         case jvm.Binary(type=jvm.Int(), operant=jvm.BinaryOpr.Div):

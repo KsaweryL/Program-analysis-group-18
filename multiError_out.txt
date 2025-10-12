@@ -1,0 +1,18 @@
+[DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+{} <{0:(bool False)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:0>
+[DEBUG] Type: Z
+[DEBUG] STEP ifz ne 8
+{AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Boolean(), value=False)} <{0:(bool False)}, (bool False), jpamb.cases.Simple.multiError:(Z)I:1>
+[DEBUG] To compare Value(type=Boolean(), value=False)
+[DEBUG] STEP load:I 0
+{AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Boolean(), value=False)} <{0:(bool False)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:2>
+[DEBUG] STEP ifz ne 8
+{AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Boolean(), value=False)} <{0:(bool False)}, (bool False), jpamb.cases.Simple.multiError:(Z)I:3>
+[DEBUG] To compare Value(type=Boolean(), value=False)
+[DEBUG] STEP new java/lang/AssertionError
+{AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Boolean(), value=False)} <{0:(bool False)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:4>
+[DEBUG] STEP dup 1
+{AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Boolean(), value=False), 1: Value(type=Reference(), value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(bool False)}, 1, jpamb.cases.Simple.multiError:(Z)I:5>
+[DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
+{AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Boolean(), value=False), 1: Value(type=Reference(), value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(bool False)}, 11, jpamb.cases.Simple.multiError:(Z)I:6>
+assertion error

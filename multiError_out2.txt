@@ -1,0 +1,55 @@
+┌ Case jpamb.cases.Simple.multiError:(false) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.multiError:(Z)I' '(false)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:(bool False)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool False)}, (int 0), jpamb.cases.Simple.multiError:(Z)I:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool False)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:2>
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool False)}, (int 0), jpamb.cases.Simple.multiError:(Z)I:3>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP new java/lang/AssertionError
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool False)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:4>
+│││ [DEBUG] STEP dup 1
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(bool False)}, (ref java/lang/AssertionError), jpamb.cases.Simple.multiError:(Z)I:5>
+│││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(bool False)}, (ref java/lang/AssertionError)(ref java/lang/AssertionError), jpamb.cases.Simple.multiError:(Z)I:6>
+││└ Stderr
+││┌ Stdout
+│││ assertion error
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.multiError:(Z)I' '(false)'
+│ Expected 'assertion error' and got 'assertion error'
+└ Case jpamb.cases.Simple.multiError:(false) -> assertion error
+┌ Case jpamb.cases.Simple.multiError:(true) -> divide by zero
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.multiError:(Z)I' '(true)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:(bool True)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool True)}, (int 0), jpamb.cases.Simple.multiError:(Z)I:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool True)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:2>
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool True)}, (int 0), jpamb.cases.Simple.multiError:(Z)I:3>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP new java/lang/AssertionError
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool True)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:4>
+│││ [DEBUG] STEP dup 1
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(bool True)}, (ref java/lang/AssertionError), jpamb.cases.Simple.multiError:(Z)I:5>
+│││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(bool True)}, (ref java/lang/AssertionError)(ref java/lang/AssertionError), jpamb.cases.Simple.multiError:(Z)I:6>
+││└ Stderr
+││┌ Stdout
+│││ assertion error
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.multiError:(Z)I' '(true)'
+│ Expected 'divide by zero' and got 'assertion error'
+└ Case jpamb.cases.Simple.multiError:(true) -> divide by zero
+Total 1/2

@@ -9,6 +9,7 @@ from loguru import logger
 import os
 
 logger.remove()
+#add level="INFO" to skip the debug part
 logger.add(sys.stderr, format="[{level}] {message}")
 
 methodid, input = jpamb.getcase()

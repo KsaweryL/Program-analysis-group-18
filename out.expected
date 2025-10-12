@@ -1,0 +1,1237 @@
+┌ Case jpamb.cases.Arrays.arrayContent:() -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayContent:()V' '()'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 5
+│││ {} <{}, ϵ, jpamb.cases.Arrays.arrayContent:()V:0>
+│││ [DEBUG] STEP newarray[1D] I
+│││ {} <{}, (int 5), jpamb.cases.Arrays.arrayContent:()V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.newarray
+│││ [DEBUG] Semantics:
+│││  newarray
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: NewArray(offset=1, type=Int(), dim=1)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayContent:()V' '()'
+│ Expected 'assertion error' and got 'failure'
+└ Case jpamb.cases.Arrays.arrayContent:() -> assertion error
+┌ Case jpamb.cases.Arrays.arrayInBounds:() -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayInBounds:()V' '()'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 2
+│││ {} <{}, ϵ, jpamb.cases.Arrays.arrayInBounds:()V:0>
+│││ [DEBUG] STEP newarray[1D] I
+│││ {} <{}, (int 2), jpamb.cases.Arrays.arrayInBounds:()V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.newarray
+│││ [DEBUG] Semantics:
+│││  newarray
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: NewArray(offset=1, type=Int(), dim=1)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayInBounds:()V' '()'
+│ Expected 'ok' and got 'failure'
+└ Case jpamb.cases.Arrays.arrayInBounds:() -> ok
+┌ Case jpamb.cases.Arrays.arrayIsNull:() -> null pointer
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayIsNull:()V' '()'
+││┌ Stderr
+│││ [DEBUG] STEP push:A None
+│││ {} <{}, ϵ, jpamb.cases.Arrays.arrayIsNull:()V:0>
+│││ [DEBUG] STEP store:A 0
+│││ {} <{}, (ref None), jpamb.cases.Arrays.arrayIsNull:()V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.astore_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Reference(), index=0)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayIsNull:()V' '()'
+│ Expected 'null pointer' and got 'failure'
+└ Case jpamb.cases.Arrays.arrayIsNull:() -> null pointer
+┌ Case jpamb.cases.Arrays.arrayIsNullLength:() -> null pointer
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayIsNullLength:()V' '()'
+││┌ Stderr
+│││ [DEBUG] STEP push:A None
+│││ {} <{}, ϵ, jpamb.cases.Arrays.arrayIsNullLength:()V:0>
+│││ [DEBUG] STEP store:A 0
+│││ {} <{}, (ref None), jpamb.cases.Arrays.arrayIsNullLength:()V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.astore_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Reference(), index=0)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayIsNullLength:()V' '()'
+│ Expected 'null pointer' and got 'failure'
+└ Case jpamb.cases.Arrays.arrayIsNullLength:() -> null pointer
+┌ Case jpamb.cases.Arrays.arrayLength:() -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayLength:()V' '()'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 2
+│││ {} <{}, ϵ, jpamb.cases.Arrays.arrayLength:()V:0>
+│││ [DEBUG] STEP newarray[1D] I
+│││ {} <{}, (int 2), jpamb.cases.Arrays.arrayLength:()V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.newarray
+│││ [DEBUG] Semantics:
+│││  newarray
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: NewArray(offset=1, type=Int(), dim=1)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayLength:()V' '()'
+│ Expected 'ok' and got 'failure'
+└ Case jpamb.cases.Arrays.arrayLength:() -> ok
+┌ Case jpamb.cases.Arrays.arrayNotEmpty:([I:1]) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayNotEmpty:([I)V' '([I:1])'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Arrays.$assertionsDisabled:Z
+│││ {} <{0:(array int (1,))}, ϵ, jpamb.cases.Arrays.arrayNotEmpty:([I)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 9
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array int (1,))}, (int 0), jpamb.cases.Arrays.arrayNotEmpty:([I)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:A 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array int (1,))}, ϵ, jpamb.cases.Arrays.arrayNotEmpty:([I)V:2>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.aload_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Load(offset=6, type=Reference(), index=0)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayNotEmpty:([I)V' '([I:1])'
+│ Expected 'ok' and got 'failure'
+└ Case jpamb.cases.Arrays.arrayNotEmpty:([I:1]) -> ok
+┌ Case jpamb.cases.Arrays.arrayNotEmpty:([I:]) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayNotEmpty:([I)V' '([I:])'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Arrays.$assertionsDisabled:Z
+│││ {} <{0:(array int ())}, ϵ, jpamb.cases.Arrays.arrayNotEmpty:([I)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 9
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array int ())}, (int 0), jpamb.cases.Arrays.arrayNotEmpty:([I)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:A 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array int ())}, ϵ, jpamb.cases.Arrays.arrayNotEmpty:([I)V:2>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.aload_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Load(offset=6, type=Reference(), index=0)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayNotEmpty:([I)V' '([I:])'
+│ Expected 'assertion error' and got 'failure'
+└ Case jpamb.cases.Arrays.arrayNotEmpty:([I:]) -> assertion error
+┌ Case jpamb.cases.Arrays.arrayOutOfBounds:() -> out of bounds
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayOutOfBounds:()V' '()'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 2
+│││ {} <{}, ϵ, jpamb.cases.Arrays.arrayOutOfBounds:()V:0>
+│││ [DEBUG] STEP newarray[1D] I
+│││ {} <{}, (int 2), jpamb.cases.Arrays.arrayOutOfBounds:()V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.newarray
+│││ [DEBUG] Semantics:
+│││  newarray
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: NewArray(offset=1, type=Int(), dim=1)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arrayOutOfBounds:()V' '()'
+│ Expected 'out of bounds' and got 'failure'
+└ Case jpamb.cases.Arrays.arrayOutOfBounds:() -> out of bounds
+┌ Case jpamb.cases.Arrays.arraySometimesNull:(0) -> out of bounds
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arraySometimesNull:(I)V' '(0)'
+││┌ Stderr
+│││ [DEBUG] STEP push:A None
+│││ {} <{0:(int 0)}, ϵ, jpamb.cases.Arrays.arraySometimesNull:(I)V:0>
+│││ [DEBUG] STEP store:A 1
+│││ {} <{0:(int 0)}, (ref None), jpamb.cases.Arrays.arraySometimesNull:(I)V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.astore_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Reference(), index=1)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arraySometimesNull:(I)V' '(0)'
+│ Expected 'out of bounds' and got 'failure'
+└ Case jpamb.cases.Arrays.arraySometimesNull:(0) -> out of bounds
+┌ Case jpamb.cases.Arrays.arraySometimesNull:(11) -> null pointer
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arraySometimesNull:(I)V' '(11)'
+││┌ Stderr
+│││ [DEBUG] STEP push:A None
+│││ {} <{0:(int 11)}, ϵ, jpamb.cases.Arrays.arraySometimesNull:(I)V:0>
+│││ [DEBUG] STEP store:A 1
+│││ {} <{0:(int 11)}, (ref None), jpamb.cases.Arrays.arraySometimesNull:(I)V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.astore_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Reference(), index=1)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arraySometimesNull:(I)V' '(11)'
+│ Expected 'null pointer' and got 'failure'
+└ Case jpamb.cases.Arrays.arraySometimesNull:(11) -> null pointer
+┌ Case jpamb.cases.Arrays.arraySpellsHello:([C:'h', 'e', 'l', 'l', 'o']) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arraySpellsHello:([C)V' '([C:'"'"'h'"'"', '"'"'e'"'"', '"'"'l'"'"', '"'"'l'"'"', '"'"'o'"'"'])'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Arrays.$assertionsDisabled:Z
+│││ {} <{0:(array char ('h', 'e', 'l', 'l', 'o'))}, ϵ, jpamb.cases.Arrays.arraySpellsHello:([C)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 31
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array char ('h', 'e', 'l', 'l', 'o'))}, (int 0), jpamb.cases.Arrays.arraySpellsHello:([C)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:A 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array char ('h', 'e', 'l', 'l', 'o'))}, ϵ, jpamb.cases.Arrays.arraySpellsHello:([C)V:2>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.aload_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Load(offset=6, type=Reference(), index=0)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arraySpellsHello:([C)V' '([C:'"'"'h'"'"', '"'"'e'"'"', '"'"'l'"'"', '"'"'l'"'"', '"'"'o'"'"'])'
+│ Expected 'ok' and got 'failure'
+└ Case jpamb.cases.Arrays.arraySpellsHello:([C:'h', 'e', 'l', 'l', 'o']) -> ok
+┌ Case jpamb.cases.Arrays.arraySpellsHello:([C:'x']) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arraySpellsHello:([C)V' '([C:'"'"'x'"'"'])'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Arrays.$assertionsDisabled:Z
+│││ {} <{0:(array char ('x',))}, ϵ, jpamb.cases.Arrays.arraySpellsHello:([C)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 31
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array char ('x',))}, (int 0), jpamb.cases.Arrays.arraySpellsHello:([C)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:A 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array char ('x',))}, ϵ, jpamb.cases.Arrays.arraySpellsHello:([C)V:2>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.aload_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Load(offset=6, type=Reference(), index=0)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arraySpellsHello:([C)V' '([C:'"'"'x'"'"'])'
+│ Expected 'assertion error' and got 'failure'
+└ Case jpamb.cases.Arrays.arraySpellsHello:([C:'x']) -> assertion error
+┌ Case jpamb.cases.Arrays.arraySpellsHello:([C:]) -> out of bounds
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arraySpellsHello:([C)V' '([C:])'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Arrays.$assertionsDisabled:Z
+│││ {} <{0:(array char ())}, ϵ, jpamb.cases.Arrays.arraySpellsHello:([C)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 31
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array char ())}, (int 0), jpamb.cases.Arrays.arraySpellsHello:([C)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:A 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array char ())}, ϵ, jpamb.cases.Arrays.arraySpellsHello:([C)V:2>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.aload_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Load(offset=6, type=Reference(), index=0)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arraySpellsHello:([C)V' '([C:])'
+│ Expected 'out of bounds' and got 'failure'
+└ Case jpamb.cases.Arrays.arraySpellsHello:([C:]) -> out of bounds
+┌ Case jpamb.cases.Arrays.arraySumIsLarge:([I:50, 100, 200]) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arraySumIsLarge:([I)V' '([I:50, 100, 200])'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 0
+│││ {} <{0:(array int (50, 100, 200))}, ϵ, jpamb.cases.Arrays.arraySumIsLarge:([I)V:0>
+│││ [DEBUG] STEP store:I 1
+│││ {} <{0:(array int (50, 100, 200))}, (int 0), jpamb.cases.Arrays.arraySumIsLarge:([I)V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.istore_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Int(), index=1)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arraySumIsLarge:([I)V' '([I:50, 100, 200])'
+│ Expected 'ok' and got 'failure'
+└ Case jpamb.cases.Arrays.arraySumIsLarge:([I:50, 100, 200]) -> ok
+┌ Case jpamb.cases.Arrays.arraySumIsLarge:([I:]) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arraySumIsLarge:([I)V' '([I:])'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 0
+│││ {} <{0:(array int ())}, ϵ, jpamb.cases.Arrays.arraySumIsLarge:([I)V:0>
+│││ [DEBUG] STEP store:I 1
+│││ {} <{0:(array int ())}, (int 0), jpamb.cases.Arrays.arraySumIsLarge:([I)V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.istore_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Int(), index=1)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.arraySumIsLarge:([I)V' '([I:])'
+│ Expected 'assertion error' and got 'failure'
+└ Case jpamb.cases.Arrays.arraySumIsLarge:([I:]) -> assertion error
+┌ Case jpamb.cases.Arrays.binarySearch:(3) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.binarySearch:(I)V' '(3)'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 5
+│││ {} <{0:(int 3)}, ϵ, jpamb.cases.Arrays.binarySearch:(I)V:0>
+│││ [DEBUG] STEP newarray[1D] I
+│││ {} <{0:(int 3)}, (int 5), jpamb.cases.Arrays.binarySearch:(I)V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.newarray
+│││ [DEBUG] Semantics:
+│││  newarray
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: NewArray(offset=1, type=Int(), dim=1)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.binarySearch:(I)V' '(3)'
+│ Expected 'ok' and got 'failure'
+└ Case jpamb.cases.Arrays.binarySearch:(3) -> ok
+┌ Case jpamb.cases.Arrays.binarySearch:(6) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.binarySearch:(I)V' '(6)'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 5
+│││ {} <{0:(int 6)}, ϵ, jpamb.cases.Arrays.binarySearch:(I)V:0>
+│││ [DEBUG] STEP newarray[1D] I
+│││ {} <{0:(int 6)}, (int 5), jpamb.cases.Arrays.binarySearch:(I)V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.newarray
+│││ [DEBUG] Semantics:
+│││  newarray
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: NewArray(offset=1, type=Int(), dim=1)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Arrays.binarySearch:(I)V' '(6)'
+│ Expected 'assertion error' and got 'failure'
+└ Case jpamb.cases.Arrays.binarySearch:(6) -> assertion error
+┌ Case jpamb.cases.Calls.allPrimesArePositive:(-1) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.allPrimesArePositive:(I)V' '(-1)'
+││┌ Stderr
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(int -1)}, ϵ, jpamb.cases.Calls.allPrimesArePositive:(I)V:0>
+│││ [DEBUG] STEP invoke static jpamb/cases/Calls.generatePrimeArray:(I)[I
+│││ {} <{0:(int -1)}, (int -1), jpamb.cases.Calls.allPrimesArePositive:(I)V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=1, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='generatePrimeArray', params=ParameterType(_elements=(Int(),)), return_type=Array(contains=Int()))))
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.allPrimesArePositive:(I)V' '(-1)'
+│ Expected 'assertion error' and got 'failure'
+└ Case jpamb.cases.Calls.allPrimesArePositive:(-1) -> assertion error
+┌ Case jpamb.cases.Calls.allPrimesArePositive:(0) -> out of bounds
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.allPrimesArePositive:(I)V' '(0)'
+││┌ Stderr
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(int 0)}, ϵ, jpamb.cases.Calls.allPrimesArePositive:(I)V:0>
+│││ [DEBUG] STEP invoke static jpamb/cases/Calls.generatePrimeArray:(I)[I
+│││ {} <{0:(int 0)}, (int 0), jpamb.cases.Calls.allPrimesArePositive:(I)V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=1, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='generatePrimeArray', params=ParameterType(_elements=(Int(),)), return_type=Array(contains=Int()))))
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.allPrimesArePositive:(I)V' '(0)'
+│ Expected 'out of bounds' and got 'failure'
+└ Case jpamb.cases.Calls.allPrimesArePositive:(0) -> out of bounds
+┌ Case jpamb.cases.Calls.allPrimesArePositive:(100) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.allPrimesArePositive:(I)V' '(100)'
+││┌ Stderr
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(int 100)}, ϵ, jpamb.cases.Calls.allPrimesArePositive:(I)V:0>
+│││ [DEBUG] STEP invoke static jpamb/cases/Calls.generatePrimeArray:(I)[I
+│││ {} <{0:(int 100)}, (int 100), jpamb.cases.Calls.allPrimesArePositive:(I)V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=1, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='generatePrimeArray', params=ParameterType(_elements=(Int(),)), return_type=Array(contains=Int()))))
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.allPrimesArePositive:(I)V' '(100)'
+│ Expected 'ok' and got 'failure'
+└ Case jpamb.cases.Calls.allPrimesArePositive:(100) -> ok
+┌ Case jpamb.cases.Calls.callsAssertFalse:() -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.callsAssertFalse:()V' '()'
+││┌ Stderr
+│││ [DEBUG] STEP invoke static jpamb/cases/Calls.assertFalse:()V
+│││ {} <{}, ϵ, jpamb.cases.Calls.callsAssertFalse:()V:0>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=0, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='assertFalse', params=ParameterType(_elements=()), return_type=None)))
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.callsAssertFalse:()V' '()'
+│ Expected 'assertion error' and got 'failure'
+└ Case jpamb.cases.Calls.callsAssertFalse:() -> assertion error
+┌ Case jpamb.cases.Calls.callsAssertFib:(0) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.callsAssertFib:(I)V' '(0)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Calls.$assertionsDisabled:Z
+│││ {} <{0:(int 0)}, ϵ, jpamb.cases.Calls.callsAssertFib:(I)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 10
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Calls'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, (int 0), jpamb.cases.Calls.callsAssertFib:(I)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Calls'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, ϵ, jpamb.cases.Calls.callsAssertFib:(I)V:2>
+│││ [DEBUG] STEP invoke static jpamb/cases/Calls.fib:(I)I
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Calls'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, (int 0), jpamb.cases.Calls.callsAssertFib:(I)V:3>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=7, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='fib', params=ParameterType(_elements=(Int(),)), return_type=Int())))
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.callsAssertFib:(I)V' '(0)'
+│ Expected 'assertion error' and got 'failure'
+└ Case jpamb.cases.Calls.callsAssertFib:(0) -> assertion error
+┌ Case jpamb.cases.Calls.callsAssertFib:(8) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.callsAssertFib:(I)V' '(8)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Calls.$assertionsDisabled:Z
+│││ {} <{0:(int 8)}, ϵ, jpamb.cases.Calls.callsAssertFib:(I)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 10
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Calls'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 8)}, (int 0), jpamb.cases.Calls.callsAssertFib:(I)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Calls'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 8)}, ϵ, jpamb.cases.Calls.callsAssertFib:(I)V:2>
+│││ [DEBUG] STEP invoke static jpamb/cases/Calls.fib:(I)I
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Calls'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 8)}, (int 8), jpamb.cases.Calls.callsAssertFib:(I)V:3>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=7, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='fib', params=ParameterType(_elements=(Int(),)), return_type=Int())))
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.callsAssertFib:(I)V' '(8)'
+│ Expected 'ok' and got 'failure'
+└ Case jpamb.cases.Calls.callsAssertFib:(8) -> ok
+┌ Case jpamb.cases.Calls.callsAssertIf:(false) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.callsAssertIf:(Z)V' '(false)'
+││┌ Stderr
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(bool False)}, ϵ, jpamb.cases.Calls.callsAssertIf:(Z)V:0>
+│││ [DEBUG] STEP invoke static jpamb/cases/Calls.assertIf:(Z)V
+│││ {} <{0:(bool False)}, (int 0), jpamb.cases.Calls.callsAssertIf:(Z)V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=1, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='assertIf', params=ParameterType(_elements=(Boolean(),)), return_type=None)))
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.callsAssertIf:(Z)V' '(false)'
+│ Expected 'assertion error' and got 'failure'
+└ Case jpamb.cases.Calls.callsAssertIf:(false) -> assertion error
+┌ Case jpamb.cases.Calls.callsAssertIf:(true) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.callsAssertIf:(Z)V' '(true)'
+││┌ Stderr
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(bool True)}, ϵ, jpamb.cases.Calls.callsAssertIf:(Z)V:0>
+│││ [DEBUG] STEP invoke static jpamb/cases/Calls.assertIf:(Z)V
+│││ {} <{0:(bool True)}, (int 1), jpamb.cases.Calls.callsAssertIf:(Z)V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=1, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='assertIf', params=ParameterType(_elements=(Boolean(),)), return_type=None)))
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.callsAssertIf:(Z)V' '(true)'
+│ Expected 'ok' and got 'failure'
+└ Case jpamb.cases.Calls.callsAssertIf:(true) -> ok
+┌ Case jpamb.cases.Calls.callsAssertIfWithTrue:() -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.callsAssertIfWithTrue:()V' '()'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 1
+│││ {} <{}, ϵ, jpamb.cases.Calls.callsAssertIfWithTrue:()V:0>
+│││ [DEBUG] STEP invoke static jpamb/cases/Calls.assertIf:(Z)V
+│││ {} <{}, (int 1), jpamb.cases.Calls.callsAssertIfWithTrue:()V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=1, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='assertIf', params=ParameterType(_elements=(Boolean(),)), return_type=None)))
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.callsAssertIfWithTrue:()V' '()'
+│ Expected 'ok' and got 'failure'
+└ Case jpamb.cases.Calls.callsAssertIfWithTrue:() -> ok
+┌ Case jpamb.cases.Calls.callsAssertTrue:() -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.callsAssertTrue:()V' '()'
+││┌ Stderr
+│││ [DEBUG] STEP invoke static jpamb/cases/Calls.assertTrue:()V
+│││ {} <{}, ϵ, jpamb.cases.Calls.callsAssertTrue:()V:0>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=0, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='assertTrue', params=ParameterType(_elements=()), return_type=None)))
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Calls.callsAssertTrue:()V' '()'
+│ Expected 'ok' and got 'failure'
+└ Case jpamb.cases.Calls.callsAssertTrue:() -> ok
+┌ Case jpamb.cases.Loops.forever:() -> *
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Loops.forever:()V' '()'
+││┌ Stderr
+│││ [DEBUG] STEP goto 0
+│││ {} <{}, ϵ, jpamb.cases.Loops.forever:()V:0>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.goto
+│││ [DEBUG] Semantics:
+│││  
+│││         bc[i].opr = 'goto'
+│││         bc[i].target = t
+│││         -------------------------[goto]
+│││         bc |- (i, s) -> (t, s)
+│││         where t must be a valid instruction offset
+│││         
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Goto(offset=0, target=0)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Loops.forever:()V' '()'
+│ Expected '*' and got 'failure'
+└ Case jpamb.cases.Loops.forever:() -> *
+┌ Case jpamb.cases.Loops.neverAsserts:() -> *
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Loops.neverAsserts:()V' '()'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 1
+│││ {} <{}, ϵ, jpamb.cases.Loops.neverAsserts:()V:0>
+│││ [DEBUG] STEP store:I 0
+│││ {} <{}, (int 1), jpamb.cases.Loops.neverAsserts:()V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.istore_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Int(), index=0)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Loops.neverAsserts:()V' '()'
+│ Expected '*' and got 'failure'
+└ Case jpamb.cases.Loops.neverAsserts:() -> *
+┌ Case jpamb.cases.Loops.neverDivides:() -> *
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Loops.neverDivides:()I' '()'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 1
+│││ {} <{}, ϵ, jpamb.cases.Loops.neverDivides:()I:0>
+│││ [DEBUG] STEP store:I 0
+│││ {} <{}, (int 1), jpamb.cases.Loops.neverDivides:()I:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.istore_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Int(), index=0)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Loops.neverDivides:()I' '()'
+│ Expected '*' and got 'failure'
+└ Case jpamb.cases.Loops.neverDivides:() -> *
+┌ Case jpamb.cases.Loops.terminates:() -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Loops.terminates:()V' '()'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 0
+│││ {} <{}, ϵ, jpamb.cases.Loops.terminates:()V:0>
+│││ [DEBUG] STEP store:I 0
+│││ {} <{}, (int 0), jpamb.cases.Loops.terminates:()V:1>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.istore_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Int(), index=0)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Loops.terminates:()V' '()'
+│ Expected 'assertion error' and got 'failure'
+└ Case jpamb.cases.Loops.terminates:() -> assertion error
+┌ Case jpamb.cases.Simple.assertBoolean:(false) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.assertBoolean:(Z)V' '(false)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:(bool False)}, ϵ, jpamb.cases.Simple.assertBoolean:(Z)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool False)}, (int 0), jpamb.cases.Simple.assertBoolean:(Z)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool False)}, ϵ, jpamb.cases.Simple.assertBoolean:(Z)V:2>
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool False)}, (int 0), jpamb.cases.Simple.assertBoolean:(Z)V:3>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP new java/lang/AssertionError
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool False)}, ϵ, jpamb.cases.Simple.assertBoolean:(Z)V:4>
+│││ [DEBUG] STEP dup 1
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(bool False)}, (ref java/lang/AssertionError), jpamb.cases.Simple.assertBoolean:(Z)V:5>
+│││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(bool False)}, (ref java/lang/AssertionError)(ref java/lang/AssertionError), jpamb.cases.Simple.assertBoolean:(Z)V:6>
+││└ Stderr
+││┌ Stdout
+│││ assertion error
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.assertBoolean:(Z)V' '(false)'
+│ Expected 'assertion error' and got 'assertion error'
+└ Case jpamb.cases.Simple.assertBoolean:(false) -> assertion error
+┌ Case jpamb.cases.Simple.assertBoolean:(true) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.assertBoolean:(Z)V' '(true)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:(bool True)}, ϵ, jpamb.cases.Simple.assertBoolean:(Z)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool True)}, (int 0), jpamb.cases.Simple.assertBoolean:(Z)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool True)}, ϵ, jpamb.cases.Simple.assertBoolean:(Z)V:2>
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool True)}, (int 1), jpamb.cases.Simple.assertBoolean:(Z)V:3>
+│││ [DEBUG] To compare Value(type=Int(), value=1)
+│││ [DEBUG] STEP return:V
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool True)}, ϵ, jpamb.cases.Simple.assertBoolean:(Z)V:8>
+││└ Stderr
+││┌ Stdout
+│││ ok
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.assertBoolean:(Z)V' '(true)'
+│ Expected 'ok' and got 'ok'
+└ Case jpamb.cases.Simple.assertBoolean:(true) -> ok
+┌ Case jpamb.cases.Simple.assertFalse:() -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.assertFalse:()V' '()'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{}, ϵ, jpamb.cases.Simple.assertFalse:()V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 6
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{}, (int 0), jpamb.cases.Simple.assertFalse:()V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP new java/lang/AssertionError
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{}, ϵ, jpamb.cases.Simple.assertFalse:()V:2>
+│││ [DEBUG] STEP dup 1
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{}, (ref java/lang/AssertionError), jpamb.cases.Simple.assertFalse:()V:3>
+│││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{}, (ref java/lang/AssertionError)(ref java/lang/AssertionError), jpamb.cases.Simple.assertFalse:()V:4>
+││└ Stderr
+││┌ Stdout
+│││ assertion error
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.assertFalse:()V' '()'
+│ Expected 'assertion error' and got 'assertion error'
+└ Case jpamb.cases.Simple.assertFalse:() -> assertion error
+┌ Case jpamb.cases.Simple.assertInteger:(0) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.assertInteger:(I)V' '(0)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:(int 0)}, ϵ, jpamb.cases.Simple.assertInteger:(I)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, (int 0), jpamb.cases.Simple.assertInteger:(I)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, ϵ, jpamb.cases.Simple.assertInteger:(I)V:2>
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, (int 0), jpamb.cases.Simple.assertInteger:(I)V:3>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP new java/lang/AssertionError
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, ϵ, jpamb.cases.Simple.assertInteger:(I)V:4>
+│││ [DEBUG] STEP dup 1
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(int 0)}, (ref java/lang/AssertionError), jpamb.cases.Simple.assertInteger:(I)V:5>
+│││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(int 0)}, (ref java/lang/AssertionError)(ref java/lang/AssertionError), jpamb.cases.Simple.assertInteger:(I)V:6>
+││└ Stderr
+││┌ Stdout
+│││ assertion error
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.assertInteger:(I)V' '(0)'
+│ Expected 'assertion error' and got 'assertion error'
+└ Case jpamb.cases.Simple.assertInteger:(0) -> assertion error
+┌ Case jpamb.cases.Simple.assertInteger:(1) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.assertInteger:(I)V' '(1)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:(int 1)}, ϵ, jpamb.cases.Simple.assertInteger:(I)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, (int 0), jpamb.cases.Simple.assertInteger:(I)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, ϵ, jpamb.cases.Simple.assertInteger:(I)V:2>
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, (int 1), jpamb.cases.Simple.assertInteger:(I)V:3>
+│││ [DEBUG] To compare Value(type=Int(), value=1)
+│││ [DEBUG] STEP return:V
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, ϵ, jpamb.cases.Simple.assertInteger:(I)V:8>
+││└ Stderr
+││┌ Stdout
+│││ ok
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.assertInteger:(I)V' '(1)'
+│ Expected 'ok' and got 'ok'
+└ Case jpamb.cases.Simple.assertInteger:(1) -> ok
+┌ Case jpamb.cases.Simple.assertPositive:(-1) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.assertPositive:(I)V' '(-1)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:(int -1)}, ϵ, jpamb.cases.Simple.assertPositive:(I)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int -1)}, (int 0), jpamb.cases.Simple.assertPositive:(I)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int -1)}, ϵ, jpamb.cases.Simple.assertPositive:(I)V:2>
+│││ [DEBUG] STEP ifz gt 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int -1)}, (int -1), jpamb.cases.Simple.assertPositive:(I)V:3>
+│││ [DEBUG] To compare Value(type=Int(), value=-1)
+│││ [DEBUG] STEP new java/lang/AssertionError
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int -1)}, ϵ, jpamb.cases.Simple.assertPositive:(I)V:4>
+│││ [DEBUG] STEP dup 1
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(int -1)}, (ref java/lang/AssertionError), jpamb.cases.Simple.assertPositive:(I)V:5>
+│││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(int -1)}, (ref java/lang/AssertionError)(ref java/lang/AssertionError), jpamb.cases.Simple.assertPositive:(I)V:6>
+││└ Stderr
+││┌ Stdout
+│││ assertion error
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.assertPositive:(I)V' '(-1)'
+│ Expected 'assertion error' and got 'assertion error'
+└ Case jpamb.cases.Simple.assertPositive:(-1) -> assertion error
+┌ Case jpamb.cases.Simple.assertPositive:(1) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.assertPositive:(I)V' '(1)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:(int 1)}, ϵ, jpamb.cases.Simple.assertPositive:(I)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, (int 0), jpamb.cases.Simple.assertPositive:(I)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, ϵ, jpamb.cases.Simple.assertPositive:(I)V:2>
+│││ [DEBUG] STEP ifz gt 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, (int 1), jpamb.cases.Simple.assertPositive:(I)V:3>
+│││ [DEBUG] To compare Value(type=Int(), value=1)
+│││ [DEBUG] STEP return:V
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, ϵ, jpamb.cases.Simple.assertPositive:(I)V:8>
+││└ Stderr
+││┌ Stdout
+│││ ok
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.assertPositive:(I)V' '(1)'
+│ Expected 'ok' and got 'ok'
+└ Case jpamb.cases.Simple.assertPositive:(1) -> ok
+┌ Case jpamb.cases.Simple.checkBeforeAssert:(-1) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.checkBeforeAssert:(I)V' '(-1)'
+││┌ Stderr
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(int -1)}, ϵ, jpamb.cases.Simple.checkBeforeAssert:(I)V:0>
+│││ [DEBUG] STEP ifz ne 3
+│││ {} <{0:(int -1)}, (int -1), jpamb.cases.Simple.checkBeforeAssert:(I)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=-1)
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:(int -1)}, ϵ, jpamb.cases.Simple.checkBeforeAssert:(I)V:3>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 13
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int -1)}, (int 0), jpamb.cases.Simple.checkBeforeAssert:(I)V:4>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP push:I 1
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int -1)}, ϵ, jpamb.cases.Simple.checkBeforeAssert:(I)V:5>
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int -1)}, (int 1), jpamb.cases.Simple.checkBeforeAssert:(I)V:6>
+│││ [DEBUG] STEP binary:I div
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int -1)}, (int 1)(int -1), jpamb.cases.Simple.checkBeforeAssert:(I)V:7>
+│││ [DEBUG] STEP ifz gt 13
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int -1)}, (int -1), jpamb.cases.Simple.checkBeforeAssert:(I)V:8>
+│││ [DEBUG] To compare Value(type=Int(), value=-1)
+│││ [DEBUG] STEP new java/lang/AssertionError
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int -1)}, ϵ, jpamb.cases.Simple.checkBeforeAssert:(I)V:9>
+│││ [DEBUG] STEP dup 1
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(int -1)}, (ref java/lang/AssertionError), jpamb.cases.Simple.checkBeforeAssert:(I)V:10>
+│││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(int -1)}, (ref java/lang/AssertionError)(ref java/lang/AssertionError), jpamb.cases.Simple.checkBeforeAssert:(I)V:11>
+││└ Stderr
+││┌ Stdout
+│││ assertion error
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.checkBeforeAssert:(I)V' '(-1)'
+│ Expected 'assertion error' and got 'assertion error'
+└ Case jpamb.cases.Simple.checkBeforeAssert:(-1) -> assertion error
+┌ Case jpamb.cases.Simple.checkBeforeAssert:(0) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.checkBeforeAssert:(I)V' '(0)'
+││┌ Stderr
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(int 0)}, ϵ, jpamb.cases.Simple.checkBeforeAssert:(I)V:0>
+│││ [DEBUG] STEP ifz ne 3
+│││ {} <{0:(int 0)}, (int 0), jpamb.cases.Simple.checkBeforeAssert:(I)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP return:V
+│││ {} <{0:(int 0)}, ϵ, jpamb.cases.Simple.checkBeforeAssert:(I)V:2>
+││└ Stderr
+││┌ Stdout
+│││ ok
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.checkBeforeAssert:(I)V' '(0)'
+│ Expected 'ok' and got 'ok'
+└ Case jpamb.cases.Simple.checkBeforeAssert:(0) -> ok
+┌ Case jpamb.cases.Simple.checkBeforeDivideByN2:(0) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.checkBeforeDivideByN2:(I)I' '(0)'
+││┌ Stderr
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(int 0)}, ϵ, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:0>
+│││ [DEBUG] STEP ifz eq 6
+│││ {} <{0:(int 0)}, (int 0), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:(int 0)}, ϵ, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:6>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 15
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, (int 0), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:7>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP push:I 10
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, ϵ, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:8>
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, (int 10), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:9>
+│││ [DEBUG] STEP if gt 15
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, (int 10)(int 0), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:10>
+│││ [DEBUG] To compare Value(type=Int(), value=10) and Value(type=Int(), value=0)
+│││ [DEBUG] STEP push:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, ϵ, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:15>
+│││ [DEBUG] STEP return:I
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, (int 0), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:16>
+││└ Stderr
+││┌ Stdout
+│││ ok
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.checkBeforeDivideByN2:(I)I' '(0)'
+│ Expected 'ok' and got 'ok'
+└ Case jpamb.cases.Simple.checkBeforeDivideByN2:(0) -> ok
+┌ Case jpamb.cases.Simple.checkBeforeDivideByN2:(1) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.checkBeforeDivideByN2:(I)I' '(1)'
+││┌ Stderr
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(int 1)}, ϵ, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:0>
+│││ [DEBUG] STEP ifz eq 6
+│││ {} <{0:(int 1)}, (int 1), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:1>
+│││ [DEBUG] To compare Value(type=Int(), value=1)
+│││ [DEBUG] STEP push:I 1
+│││ {} <{0:(int 1)}, ϵ, jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:2>
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(int 1)}, (int 1), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:3>
+│││ [DEBUG] STEP binary:I div
+│││ {} <{0:(int 1)}, (int 1)(int 1), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:4>
+│││ [DEBUG] STEP return:I
+│││ {} <{0:(int 1)}, (int 1), jpamb.cases.Simple.checkBeforeDivideByN2:(I)I:5>
+││└ Stderr
+││┌ Stdout
+│││ ok
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.checkBeforeDivideByN2:(I)I' '(1)'
+│ Expected 'ok' and got 'ok'
+└ Case jpamb.cases.Simple.checkBeforeDivideByN2:(1) -> ok
+┌ Case jpamb.cases.Simple.checkBeforeDivideByN:(0) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.checkBeforeDivideByN:(I)I' '(0)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:(int 0)}, ϵ, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, (int 0), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, ϵ, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:2>
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, (int 0), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:3>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP new java/lang/AssertionError
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, ϵ, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:4>
+│││ [DEBUG] STEP dup 1
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(int 0)}, (ref java/lang/AssertionError), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:5>
+│││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(int 0)}, (ref java/lang/AssertionError)(ref java/lang/AssertionError), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:6>
+││└ Stderr
+││┌ Stdout
+│││ assertion error
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.checkBeforeDivideByN:(I)I' '(0)'
+│ Expected 'assertion error' and got 'assertion error'
+└ Case jpamb.cases.Simple.checkBeforeDivideByN:(0) -> assertion error
+┌ Case jpamb.cases.Simple.checkBeforeDivideByN:(1) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.checkBeforeDivideByN:(I)I' '(1)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:(int 1)}, ϵ, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, (int 0), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, ϵ, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:2>
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, (int 1), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:3>
+│││ [DEBUG] To compare Value(type=Int(), value=1)
+│││ [DEBUG] STEP push:I 1
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, ϵ, jpamb.cases.Simple.checkBeforeDivideByN:(I)I:8>
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, (int 1), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:9>
+│││ [DEBUG] STEP binary:I div
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, (int 1)(int 1), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:10>
+│││ [DEBUG] STEP return:I
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 1)}, (int 1), jpamb.cases.Simple.checkBeforeDivideByN:(I)I:11>
+││└ Stderr
+││┌ Stdout
+│││ ok
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.checkBeforeDivideByN:(I)I' '(1)'
+│ Expected 'ok' and got 'ok'
+└ Case jpamb.cases.Simple.checkBeforeDivideByN:(1) -> ok
+┌ Case jpamb.cases.Simple.divideByN:(0) -> divide by zero
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.divideByN:(I)I' '(0)'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 1
+│││ {} <{0:(int 0)}, ϵ, jpamb.cases.Simple.divideByN:(I)I:0>
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(int 0)}, (int 1), jpamb.cases.Simple.divideByN:(I)I:1>
+│││ [DEBUG] STEP binary:I div
+│││ {} <{0:(int 0)}, (int 1)(int 0), jpamb.cases.Simple.divideByN:(I)I:2>
+││└ Stderr
+││┌ Stdout
+│││ divide by zero
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.divideByN:(I)I' '(0)'
+│ Expected 'divide by zero' and got 'divide by zero'
+└ Case jpamb.cases.Simple.divideByN:(0) -> divide by zero
+┌ Case jpamb.cases.Simple.divideByN:(1) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.divideByN:(I)I' '(1)'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 1
+│││ {} <{0:(int 1)}, ϵ, jpamb.cases.Simple.divideByN:(I)I:0>
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(int 1)}, (int 1), jpamb.cases.Simple.divideByN:(I)I:1>
+│││ [DEBUG] STEP binary:I div
+│││ {} <{0:(int 1)}, (int 1)(int 1), jpamb.cases.Simple.divideByN:(I)I:2>
+│││ [DEBUG] STEP return:I
+│││ {} <{0:(int 1)}, (int 1), jpamb.cases.Simple.divideByN:(I)I:3>
+││└ Stderr
+││┌ Stdout
+│││ ok
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.divideByN:(I)I' '(1)'
+│ Expected 'ok' and got 'ok'
+└ Case jpamb.cases.Simple.divideByN:(1) -> ok
+┌ Case jpamb.cases.Simple.divideByNMinus10054203:(0) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.divideByNMinus10054203:(I)I' '(0)'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 1
+│││ {} <{0:(int 0)}, ϵ, jpamb.cases.Simple.divideByNMinus10054203:(I)I:0>
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(int 0)}, (int 1), jpamb.cases.Simple.divideByNMinus10054203:(I)I:1>
+│││ [DEBUG] STEP push:I 10054203
+│││ {} <{0:(int 0)}, (int 1)(int 0), jpamb.cases.Simple.divideByNMinus10054203:(I)I:2>
+│││ [DEBUG] STEP binary:I sub
+│││ {} <{0:(int 0)}, (int 1)(int 0)(int 10054203), jpamb.cases.Simple.divideByNMinus10054203:(I)I:3>
+│││ [DEBUG] STEP binary:I div
+│││ {} <{0:(int 0)}, (int 1)(int -10054203), jpamb.cases.Simple.divideByNMinus10054203:(I)I:4>
+│││ [DEBUG] STEP return:I
+│││ {} <{0:(int 0)}, (int -1), jpamb.cases.Simple.divideByNMinus10054203:(I)I:5>
+││└ Stderr
+││┌ Stdout
+│││ ok
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.divideByNMinus10054203:(I)I' '(0)'
+│ Expected 'ok' and got 'ok'
+└ Case jpamb.cases.Simple.divideByNMinus10054203:(0) -> ok
+┌ Case jpamb.cases.Simple.divideByNMinus10054203:(10054203) -> divide by zero
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.divideByNMinus10054203:(I)I' '(10054203)'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 1
+│││ {} <{0:(int 10054203)}, ϵ, jpamb.cases.Simple.divideByNMinus10054203:(I)I:0>
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(int 10054203)}, (int 1), jpamb.cases.Simple.divideByNMinus10054203:(I)I:1>
+│││ [DEBUG] STEP push:I 10054203
+│││ {} <{0:(int 10054203)}, (int 1)(int 10054203), jpamb.cases.Simple.divideByNMinus10054203:(I)I:2>
+│││ [DEBUG] STEP binary:I sub
+│││ {} <{0:(int 10054203)}, (int 1)(int 10054203)(int 10054203), jpamb.cases.Simple.divideByNMinus10054203:(I)I:3>
+│││ [DEBUG] STEP binary:I div
+│││ {} <{0:(int 10054203)}, (int 1)(int 0), jpamb.cases.Simple.divideByNMinus10054203:(I)I:4>
+││└ Stderr
+││┌ Stdout
+│││ divide by zero
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.divideByNMinus10054203:(I)I' '(10054203)'
+│ Expected 'divide by zero' and got 'divide by zero'
+└ Case jpamb.cases.Simple.divideByNMinus10054203:(10054203) -> divide by zero
+┌ Case jpamb.cases.Simple.divideByZero:() -> divide by zero
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.divideByZero:()I' '()'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 1
+│││ {} <{}, ϵ, jpamb.cases.Simple.divideByZero:()I:0>
+│││ [DEBUG] STEP push:I 0
+│││ {} <{}, (int 1), jpamb.cases.Simple.divideByZero:()I:1>
+│││ [DEBUG] STEP binary:I div
+│││ {} <{}, (int 1)(int 0), jpamb.cases.Simple.divideByZero:()I:2>
+││└ Stderr
+││┌ Stdout
+│││ divide by zero
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.divideByZero:()I' '()'
+│ Expected 'divide by zero' and got 'divide by zero'
+└ Case jpamb.cases.Simple.divideByZero:() -> divide by zero
+┌ Case jpamb.cases.Simple.divideZeroByZero:(0, 0) -> divide by zero
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.divideZeroByZero:(II)I' '(0, 0)'
+││┌ Stderr
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(int 0), 1:(int 0)}, ϵ, jpamb.cases.Simple.divideZeroByZero:(II)I:0>
+│││ [DEBUG] STEP load:I 1
+│││ {} <{0:(int 0), 1:(int 0)}, (int 0), jpamb.cases.Simple.divideZeroByZero:(II)I:1>
+│││ [DEBUG] STEP binary:I div
+│││ {} <{0:(int 0), 1:(int 0)}, (int 0)(int 0), jpamb.cases.Simple.divideZeroByZero:(II)I:2>
+││└ Stderr
+││┌ Stdout
+│││ divide by zero
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.divideZeroByZero:(II)I' '(0, 0)'
+│ Expected 'divide by zero' and got 'divide by zero'
+└ Case jpamb.cases.Simple.divideZeroByZero:(0, 0) -> divide by zero
+┌ Case jpamb.cases.Simple.divideZeroByZero:(0, 1) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.divideZeroByZero:(II)I' '(0, 1)'
+││┌ Stderr
+│││ [DEBUG] STEP load:I 0
+│││ {} <{0:(int 0), 1:(int 1)}, ϵ, jpamb.cases.Simple.divideZeroByZero:(II)I:0>
+│││ [DEBUG] STEP load:I 1
+│││ {} <{0:(int 0), 1:(int 1)}, (int 0), jpamb.cases.Simple.divideZeroByZero:(II)I:1>
+│││ [DEBUG] STEP binary:I div
+│││ {} <{0:(int 0), 1:(int 1)}, (int 0)(int 1), jpamb.cases.Simple.divideZeroByZero:(II)I:2>
+│││ [DEBUG] STEP return:I
+│││ {} <{0:(int 0), 1:(int 1)}, (int 0), jpamb.cases.Simple.divideZeroByZero:(II)I:3>
+││└ Stderr
+││┌ Stdout
+│││ ok
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.divideZeroByZero:(II)I' '(0, 1)'
+│ Expected 'ok' and got 'ok'
+└ Case jpamb.cases.Simple.divideZeroByZero:(0, 1) -> ok
+┌ Case jpamb.cases.Simple.earlyReturn:() -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.earlyReturn:()I' '()'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 0
+│││ {} <{}, ϵ, jpamb.cases.Simple.earlyReturn:()I:0>
+│││ [DEBUG] STEP return:I
+│││ {} <{}, (int 0), jpamb.cases.Simple.earlyReturn:()I:1>
+││└ Stderr
+││┌ Stdout
+│││ ok
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.earlyReturn:()I' '()'
+│ Expected 'ok' and got 'ok'
+└ Case jpamb.cases.Simple.earlyReturn:() -> ok
+┌ Case jpamb.cases.Simple.justReturn:() -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.justReturn:()I' '()'
+││┌ Stderr
+│││ [DEBUG] STEP push:I 0
+│││ {} <{}, ϵ, jpamb.cases.Simple.justReturn:()I:0>
+│││ [DEBUG] STEP return:I
+│││ {} <{}, (int 0), jpamb.cases.Simple.justReturn:()I:1>
+││└ Stderr
+││┌ Stdout
+│││ ok
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.justReturn:()I' '()'
+│ Expected 'ok' and got 'ok'
+└ Case jpamb.cases.Simple.justReturn:() -> ok
+┌ Case jpamb.cases.Simple.justReturnNothing:() -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.justReturnNothing:()V' '()'
+││┌ Stderr
+│││ [DEBUG] STEP return:V
+│││ {} <{}, ϵ, jpamb.cases.Simple.justReturnNothing:()V:0>
+││└ Stderr
+││┌ Stdout
+│││ ok
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.justReturnNothing:()V' '()'
+│ Expected 'ok' and got 'ok'
+└ Case jpamb.cases.Simple.justReturnNothing:() -> ok
+┌ Case jpamb.cases.Simple.multiError:(false) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.multiError:(Z)I' '(false)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:(bool False)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool False)}, (int 0), jpamb.cases.Simple.multiError:(Z)I:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool False)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:2>
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool False)}, (int 0), jpamb.cases.Simple.multiError:(Z)I:3>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP new java/lang/AssertionError
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool False)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:4>
+│││ [DEBUG] STEP dup 1
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(bool False)}, (ref java/lang/AssertionError), jpamb.cases.Simple.multiError:(Z)I:5>
+│││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(bool False)}, (ref java/lang/AssertionError)(ref java/lang/AssertionError), jpamb.cases.Simple.multiError:(Z)I:6>
+││└ Stderr
+││┌ Stdout
+│││ assertion error
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.multiError:(Z)I' '(false)'
+│ Expected 'assertion error' and got 'assertion error'
+└ Case jpamb.cases.Simple.multiError:(false) -> assertion error
+┌ Case jpamb.cases.Simple.multiError:(true) -> divide by zero
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.multiError:(Z)I' '(true)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Simple.$assertionsDisabled:Z
+│││ {} <{0:(bool True)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool True)}, (int 0), jpamb.cases.Simple.multiError:(Z)I:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool True)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:2>
+│││ [DEBUG] STEP ifz ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool True)}, (int 1), jpamb.cases.Simple.multiError:(Z)I:3>
+│││ [DEBUG] To compare Value(type=Int(), value=1)
+│││ [DEBUG] STEP push:I 1
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool True)}, ϵ, jpamb.cases.Simple.multiError:(Z)I:8>
+│││ [DEBUG] STEP push:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool True)}, (int 1), jpamb.cases.Simple.multiError:(Z)I:9>
+│││ [DEBUG] STEP binary:I div
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Simple'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(bool True)}, (int 1)(int 0), jpamb.cases.Simple.multiError:(Z)I:10>
+││└ Stderr
+││┌ Stdout
+│││ divide by zero
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Simple.multiError:(Z)I' '(true)'
+│ Expected 'divide by zero' and got 'divide by zero'
+└ Case jpamb.cases.Simple.multiError:(true) -> divide by zero
+┌ Case jpamb.cases.Tricky.collatz:(0) -> assertion error
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Tricky.collatz:(I)V' '(0)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Tricky.$assertionsDisabled:Z
+│││ {} <{0:(int 0)}, ϵ, jpamb.cases.Tricky.collatz:(I)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 23
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, (int 0), jpamb.cases.Tricky.collatz:(I)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, ϵ, jpamb.cases.Tricky.collatz:(I)V:2>
+│││ [DEBUG] STEP ifz gt 23
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, (int 0), jpamb.cases.Tricky.collatz:(I)V:3>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP new java/lang/AssertionError
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, ϵ, jpamb.cases.Tricky.collatz:(I)V:4>
+│││ [DEBUG] STEP dup 1
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(int 0)}, (ref java/lang/AssertionError), jpamb.cases.Tricky.collatz:(I)V:5>
+│││ [DEBUG] STEP invoke special java/lang/AssertionError.<init>:()V
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0), Value(type=Reference(), value=ClassName('java/lang/AssertionError')): Value(type=<class 'jpamb.jvm.base.Object'>, value={'classname': ClassName('java/lang/AssertionError'), 'fields': {}})} <{0:(int 0)}, (ref java/lang/AssertionError)(ref java/lang/AssertionError), jpamb.cases.Tricky.collatz:(I)V:6>
+││└ Stderr
+││┌ Stdout
+│││ assertion error
+││└ Stdout
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Tricky.collatz:(I)V' '(0)'
+│ Expected 'assertion error' and got 'assertion error'
+└ Case jpamb.cases.Tricky.collatz:(0) -> assertion error
+┌ Case jpamb.cases.Tricky.collatz:(24) -> ok
+│┌ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Tricky.collatz:(I)V' '(24)'
+││┌ Stderr
+│││ [DEBUG] STEP get static jpamb/cases/Tricky.$assertionsDisabled:Z
+│││ {} <{0:(int 24)}, ϵ, jpamb.cases.Tricky.collatz:(I)V:0>
+│││ [DEBUG] Type: Z
+│││ [DEBUG] STEP ifz ne 23
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, (int 0), jpamb.cases.Tricky.collatz:(I)V:1>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, ϵ, jpamb.cases.Tricky.collatz:(I)V:2>
+│││ [DEBUG] STEP ifz gt 23
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, (int 24), jpamb.cases.Tricky.collatz:(I)V:3>
+│││ [DEBUG] To compare Value(type=Int(), value=24)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, ϵ, jpamb.cases.Tricky.collatz:(I)V:23>
+│││ [DEBUG] STEP push:I 1
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, (int 24), jpamb.cases.Tricky.collatz:(I)V:24>
+│││ [DEBUG] STEP if ne 8
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, (int 24)(int 1), jpamb.cases.Tricky.collatz:(I)V:25>
+│││ [DEBUG] To compare Value(type=Int(), value=24) and Value(type=Int(), value=1)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, ϵ, jpamb.cases.Tricky.collatz:(I)V:8>
+│││ [DEBUG] STEP push:I 2
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, (int 24), jpamb.cases.Tricky.collatz:(I)V:9>
+│││ [DEBUG] STEP binary:I rem
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, (int 24)(int 2), jpamb.cases.Tricky.collatz:(I)V:10>
+│││ [DEBUG] STEP ifz ne 17
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, (int 0), jpamb.cases.Tricky.collatz:(I)V:11>
+│││ [DEBUG] To compare Value(type=Int(), value=0)
+│││ [DEBUG] STEP load:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, ϵ, jpamb.cases.Tricky.collatz:(I)V:12>
+│││ [DEBUG] STEP push:I 2
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, (int 24), jpamb.cases.Tricky.collatz:(I)V:13>
+│││ [DEBUG] STEP binary:I div
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, (int 24)(int 2), jpamb.cases.Tricky.collatz:(I)V:14>
+│││ [DEBUG] STEP store:I 0
+│││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, (int 12), jpamb.cases.Tricky.collatz:(I)V:15>
+│││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.istore_n
+│││ Traceback (most recent call last):
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││     state = step(state)
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
+│││ NotImplementedError: Don't know how to handle: Store(offset=27, type=Int(), index=0)
+││└ Stderr
+│└ Run /home/zipek/masters-deg/.venv_uv/bin/python solutions/interpreter.py 'jpamb.cases.Tricky.collatz:(I)V' '(24)'
+│ Expected 'ok' and got 'failure'
+└ Case jpamb.cases.Tricky.collatz:(24) -> ok
+Total 26/58

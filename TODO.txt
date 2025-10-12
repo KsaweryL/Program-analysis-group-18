@@ -1,0 +1,6 @@
+13.10.2025: I need to build new syntaxer, that will use output form my interpreter to base its predictions on
+
+this is what "jpamb test" essentially runs: solutions/my_analyzer.py 'jpamb.cases.Tricky.collatz:(I)V'
+
+very nice, now I just need to make new analyzer, that will use my interpreter to make predictions.
+This analyzer will take as input the name of the function.

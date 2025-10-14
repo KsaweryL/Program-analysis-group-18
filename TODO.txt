@@ -6,3 +6,6 @@ very nice, now I just need to make new analyzer, that will use my interpreter to
 This analyzer will take as input the name of the function.
 
 14.10.2025: Finished dynamic analysis on simple cases (very simple fuzzing).
+
+- Add hybrid analysis
+- add coverage-guided analysis

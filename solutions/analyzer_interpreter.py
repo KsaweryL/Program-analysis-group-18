@@ -78,7 +78,8 @@ def Return_counters(occurences_dict, command, args, method):
 args_to_check = []
 command = ["python", "solutions/interpreter.py"]
 
-#logger.debug(search_area_type.group(0))
+
+"""Tag: random, dynamic"""
 
 if re.search(r'\(Z\)', search_area_type.group(0)):
     #boolean
@@ -135,51 +136,51 @@ occurences = Return_counters(occurences,command, args_to_check, method)
 
 #logger.debug(occurences)
 
-lower_bound = 0.2
-upper_bound = 0.98
-additional_number = 0.49
+lower_bound = 0.5      #0.2
+upper_bound = 1.0      #0.98
+additional_number = 0.0         #0.49
 
 if total_occurences == 0:
     total_occurences = 1
 
 if occurences["ok_occurence"]/total_occurences >= lower_bound:
-    if occurences["ok_occurence"]/total_occurences + 0.49 > upper_bound:
+    if occurences["ok_occurence"]/total_occurences + additional_number > upper_bound:
         print(f"ok;{upper_bound*100}%")
     else:
-        print(f"ok;{round(occurences["ok_occurence"]/total_occurences*100)+49}%")
+        print(f"ok;{round(occurences["ok_occurence"]/total_occurences*100)+additional_number*100}%")
 else:
     print(f"ok;{lower_bound*100}%")
 
 if occurences["divide_by_zero_occurence"]>= lower_bound:
-    if occurences["divide_by_zero_occurence"]/total_occurences + 0.49 > upper_bound:
+    if occurences["divide_by_zero_occurence"]/total_occurences + additional_number > upper_bound:
         print(f"divide by zero;{upper_bound*100}%")
     else:
-        print(f"divide by zero;{round(occurences["divide_by_zero_occurence"]/total_occurences*100)+49}%")
+        print(f"divide by zero;{round(occurences["divide_by_zero_occurence"]/total_occurences*100)+additional_number*100}%")
 else:
     print(f"divide by zero;{lower_bound*100}%")
 
 if occurences["assertion_error_occurence"]>= lower_bound:
-    if occurences["assertion_error_occurence"]/total_occurences + 0.49 > upper_bound:
+    if occurences["assertion_error_occurence"]/total_occurences + additional_number > upper_bound:
         print(f"assertion error;{upper_bound*100}%")
     else:
-        print(f"assertion error;{round(occurences["assertion_error_occurence"]/total_occurences*100)+49}%")
+        print(f"assertion error;{round(occurences["assertion_error_occurence"]/total_occurences*100)+additional_number*100}%")
 
 else:
         print(f"assertion error;{lower_bound*100}%")
 
 if occurences["out_of_bounds_occurence"]>= lower_bound:
-    if occurences["out_of_bounds_occurence"]/total_occurences + 0.49 > upper_bound:
+    if occurences["out_of_bounds_occurence"]/total_occurences + additional_number > upper_bound:
         print(f"out of bounds;{upper_bound*100}%")
     else:
-        print(f"out of bounds;{round(occurences["out_of_bounds_occurence"]/total_occurences*100)+49}%")
+        print(f"out of bounds;{round(occurences["out_of_bounds_occurence"]/total_occurences*100)+additional_number*100}%")
 else:
     print(f"out of bounds;{lower_bound*100}%")
 
 if occurences["null_pointer_occurence"]>= lower_bound:
-    if occurences["null_pointer_occurence"]/total_occurences + 0.49 > upper_bound:
+    if occurences["null_pointer_occurence"]/total_occurences + additional_number > upper_bound:
         print(f"null pointer;{upper_bound*100}%")
     else:
-        print(f"null pointer;{round(occurences["null_pointer_occurence"]/total_occurences*100)+49}%")
+        print(f"null pointer;{round(occurences["null_pointer_occurence"]/total_occurences*100)+additional_number*100}%")
 else:
     print(f"null pointer;{lower_bound*100}%")
 

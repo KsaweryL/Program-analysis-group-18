@@ -9,9 +9,9 @@
 │││ [DEBUG] Semantics:
 │││  newarray
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: NewArray(offset=1, type=Int(), dim=1)
 ││└ Stderr
@@ -29,9 +29,9 @@
 │││ [DEBUG] Semantics:
 │││  newarray
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: NewArray(offset=1, type=Int(), dim=1)
 ││└ Stderr
@@ -47,9 +47,9 @@
 │││ {} <{}, (ref None), jpamb.cases.Arrays.arrayIsNull:()V:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.astore_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Reference(), index=0)
 ││└ Stderr
@@ -65,9 +65,9 @@
 │││ {} <{}, (ref None), jpamb.cases.Arrays.arrayIsNullLength:()V:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.astore_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Reference(), index=0)
 ││└ Stderr
@@ -85,9 +85,9 @@
 │││ [DEBUG] Semantics:
 │││  newarray
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: NewArray(offset=1, type=Int(), dim=1)
 ││└ Stderr
@@ -107,9 +107,9 @@
 │││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array int (1,))}, ϵ, jpamb.cases.Arrays.arrayNotEmpty:([I)V:2>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.aload_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Load(offset=6, type=Reference(), index=0)
 ││└ Stderr
@@ -129,9 +129,9 @@
 │││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array int ())}, ϵ, jpamb.cases.Arrays.arrayNotEmpty:([I)V:2>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.aload_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Load(offset=6, type=Reference(), index=0)
 ││└ Stderr
@@ -149,9 +149,9 @@
 │││ [DEBUG] Semantics:
 │││  newarray
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: NewArray(offset=1, type=Int(), dim=1)
 ││└ Stderr
@@ -167,9 +167,9 @@
 │││ {} <{0:(int 0)}, (ref None), jpamb.cases.Arrays.arraySometimesNull:(I)V:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.astore_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Reference(), index=1)
 ││└ Stderr
@@ -185,9 +185,9 @@
 │││ {} <{0:(int 11)}, (ref None), jpamb.cases.Arrays.arraySometimesNull:(I)V:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.astore_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Reference(), index=1)
 ││└ Stderr
@@ -207,9 +207,9 @@
 │││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array char ('h', 'e', 'l', 'l', 'o'))}, ϵ, jpamb.cases.Arrays.arraySpellsHello:([C)V:2>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.aload_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Load(offset=6, type=Reference(), index=0)
 ││└ Stderr
@@ -229,9 +229,9 @@
 │││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array char ('x',))}, ϵ, jpamb.cases.Arrays.arraySpellsHello:([C)V:2>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.aload_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Load(offset=6, type=Reference(), index=0)
 ││└ Stderr
@@ -251,9 +251,9 @@
 │││ {AbsFieldID(classname=ClassName('jpamb/cases/Arrays'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(array char ())}, ϵ, jpamb.cases.Arrays.arraySpellsHello:([C)V:2>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.aload_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Load(offset=6, type=Reference(), index=0)
 ││└ Stderr
@@ -269,9 +269,9 @@
 │││ {} <{0:(array int (50, 100, 200))}, (int 0), jpamb.cases.Arrays.arraySumIsLarge:([I)V:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.istore_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Int(), index=1)
 ││└ Stderr
@@ -287,9 +287,9 @@
 │││ {} <{0:(array int ())}, (int 0), jpamb.cases.Arrays.arraySumIsLarge:([I)V:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.istore_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Int(), index=1)
 ││└ Stderr
@@ -307,9 +307,9 @@
 │││ [DEBUG] Semantics:
 │││  newarray
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: NewArray(offset=1, type=Int(), dim=1)
 ││└ Stderr
@@ -327,9 +327,9 @@
 │││ [DEBUG] Semantics:
 │││  newarray
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: NewArray(offset=1, type=Int(), dim=1)
 ││└ Stderr
@@ -345,9 +345,9 @@
 │││ {} <{0:(int -1)}, (int -1), jpamb.cases.Calls.allPrimesArePositive:(I)V:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=1, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='generatePrimeArray', params=ParameterType(_elements=(Int(),)), return_type=Array(contains=Int()))))
 ││└ Stderr
@@ -363,9 +363,9 @@
 │││ {} <{0:(int 0)}, (int 0), jpamb.cases.Calls.allPrimesArePositive:(I)V:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=1, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='generatePrimeArray', params=ParameterType(_elements=(Int(),)), return_type=Array(contains=Int()))))
 ││└ Stderr
@@ -381,9 +381,9 @@
 │││ {} <{0:(int 100)}, (int 100), jpamb.cases.Calls.allPrimesArePositive:(I)V:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=1, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='generatePrimeArray', params=ParameterType(_elements=(Int(),)), return_type=Array(contains=Int()))))
 ││└ Stderr
@@ -397,9 +397,9 @@
 │││ {} <{}, ϵ, jpamb.cases.Calls.callsAssertFalse:()V:0>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=0, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='assertFalse', params=ParameterType(_elements=()), return_type=None)))
 ││└ Stderr
@@ -421,9 +421,9 @@
 │││ {AbsFieldID(classname=ClassName('jpamb/cases/Calls'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 0)}, (int 0), jpamb.cases.Calls.callsAssertFib:(I)V:3>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=7, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='fib', params=ParameterType(_elements=(Int(),)), return_type=Int())))
 ││└ Stderr
@@ -445,9 +445,9 @@
 │││ {AbsFieldID(classname=ClassName('jpamb/cases/Calls'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 8)}, (int 8), jpamb.cases.Calls.callsAssertFib:(I)V:3>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=7, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='fib', params=ParameterType(_elements=(Int(),)), return_type=Int())))
 ││└ Stderr
@@ -463,9 +463,9 @@
 │││ {} <{0:(bool False)}, (int 0), jpamb.cases.Calls.callsAssertIf:(Z)V:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=1, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='assertIf', params=ParameterType(_elements=(Boolean(),)), return_type=None)))
 ││└ Stderr
@@ -481,9 +481,9 @@
 │││ {} <{0:(bool True)}, (int 1), jpamb.cases.Calls.callsAssertIf:(Z)V:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=1, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='assertIf', params=ParameterType(_elements=(Boolean(),)), return_type=None)))
 ││└ Stderr
@@ -499,9 +499,9 @@
 │││ {} <{}, (int 1), jpamb.cases.Calls.callsAssertIfWithTrue:()V:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=1, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='assertIf', params=ParameterType(_elements=(Boolean(),)), return_type=None)))
 ││└ Stderr
@@ -515,9 +515,9 @@
 │││ {} <{}, ϵ, jpamb.cases.Calls.callsAssertTrue:()V:0>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.invokestatic
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: InvokeStatic(offset=0, method=AbsMethodID(classname=ClassName('jpamb/cases/Calls'), extension=MethodID(name='assertTrue', params=ParameterType(_elements=()), return_type=None)))
 ││└ Stderr
@@ -539,9 +539,9 @@
 │││         where t must be a valid instruction offset
 │││         
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Goto(offset=0, target=0)
 ││└ Stderr
@@ -557,9 +557,9 @@
 │││ {} <{}, (int 1), jpamb.cases.Loops.neverAsserts:()V:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.istore_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Int(), index=0)
 ││└ Stderr
@@ -575,9 +575,9 @@
 │││ {} <{}, (int 1), jpamb.cases.Loops.neverDivides:()I:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.istore_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Int(), index=0)
 ││└ Stderr
@@ -593,9 +593,9 @@
 │││ {} <{}, (int 0), jpamb.cases.Loops.terminates:()V:1>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.istore_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Store(offset=1, type=Int(), index=0)
 ││└ Stderr
@@ -1225,9 +1225,9 @@
 │││ {AbsFieldID(classname=ClassName('jpamb/cases/Tricky'), extension=FieldID(name='$assertionsDisabled', type=Boolean())): Value(type=Int(), value=0)} <{0:(int 24)}, (int 12), jpamb.cases.Tricky.collatz:(I)V:15>
 │││ [WARNING] Instructions can be found at: https://docs.oracle.com/javase/specs/jvms/se23/html/jvms-6.html#jvms-6.5.istore_n
 │││ Traceback (most recent call last):
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 410, in <module>
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 411, in <module>
 │││     state = step(state)
-│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 400, in step
+│││   File "/home/zipek/masters-deg/program-analysis/Program-analysis-group-18/solutions/interpreter.py", line 401, in step
 │││     raise NotImplementedError(f"Don't know how to handle: {a!r}")
 │││ NotImplementedError: Don't know how to handle: Store(offset=27, type=Int(), index=0)
 ││└ Stderr
